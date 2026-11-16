@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hotel GUK — rooms and cottages 1 km from Bukovel</title>
+  <meta name="description" content="A hotel and cottages in Polianytsia, a kilometre from the Bukovel ski lifts. Carpathian restaurant, pool, sauna, jacuzzi and barbecue area.">
+
+  <!-- Мовні версії сторінки (для Google) -->
+  <link rel="alternate" hreflang="uk" href="../index.html">
+  <link rel="alternate" hreflang="en" href="index.html">
+
+  <!-- Стилі підключаються в такому порядку:
+       шрифти → змінні → база → компоненти → шапка → секції головної → футер -->
+  <link rel="stylesheet" href="../css/fonts.css">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <script src="../js/main.js" defer></script>
+
+  <!-- Тема вмикається ДО відмальовки сторінки, щоб не було «спалаху»
+       світлої теми при відкритті в темній. Решта логіки — js/main.js -->
+  <script>
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem("theme"); } catch (e) {}
+      var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (saved === "dark" || (!saved && prefersDark)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- =====================================================
+       00. ШАПКА САЙТУ
+       Стилі: css/header.css
+       Логіка (прокрутка, мобільне меню): js/main.js
+       ===================================================== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+
+      <!-- Логотип -->
+      <a class="logo" href="#top" aria-label="Hotel GUK — back to top">
+        <!-- Іконка: силует гір (можна замінити на справжній логотип) -->
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <path d="M2 26 L12 10 L18 19 L22 14 L30 26 Z" stroke-linejoin="round"/>
+        </svg>
+        <span>GUK</span>
+      </a>
+
+      <!-- Навігація (десктоп) -->
+      <nav class="nav" aria-label="Main menu">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#about">The house</a></li>
+          <li><a class="nav__link" href="#rooms">Rooms</a></li>
+          <li><a class="nav__link" href="#experiences">Unwind</a></li>
+          <li><a class="nav__link" href="#packages">Offers</a></li>
+          <li><a class="nav__link" href="#location">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Дії справа -->
+      <div class="header__actions">
+        <a class="header__phone" href="tel:+380988270243">+38 098 827 02 43</a>
+
+        <!-- Перемикач мови (стилі: header.css → «Перемикач мови») -->
+        <nav class="lang-switch" aria-label="Site language">
+          <a href="../index.html" lang="uk">UA</a>
+          <a href="index.html" aria-current="true" lang="en">EN</a>
+        </nav>
+
+        <!-- Перемикач теми (стилі: header.css → «Перемикач теми») -->
+        <button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false"
+                data-label-dark="Switch to dark theme" data-label-light="Switch to light theme">
+          <!-- Місяць: видно у світлій темі -->
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/>
+          </svg>
+          <!-- Сонце: видно в темній темі -->
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+          </svg>
+        </button>
+
+        <a class="btn btn--small btn--book" href="https://book-guk.otelms.com" target="_blank" rel="noopener">Book now</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">
+          <span class="menu-toggle__icon" aria-hidden="true"></span>
+          <span class="menu-toggle__text">Menu</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+    <!-- Мобільне меню (відкривається кнопкою «Меню») -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <div class="menu__top">
+      <span class="logo">GUK</span>
+      <button class="menu__close" type="button">Close ✕</button>
+    </div>
+    <ul class="menu__list">
+      <li><a href="#about">The house</a></li>
+      <li><a href="#rooms">Rooms</a></li>
+      <li><a href="#experiences">Unwind</a></li>
+      <li><a href="#packages">Offers</a></li>
+      <li><a href="#location">Contact</a></li>
+    </ul>
+    <div class="menu__footer">
+      <nav class="lang-switch lang-switch--menu" aria-label="Site language">
+        <a href="../index.html" lang="uk">Українська</a>
+        <a href="index.html" aria-current="true" lang="en">English</a>
+      </nav>
+      <a href="tel:+380988270243">+38 098 827 02 43</a>
+      <a href="mailto:guk.polyanica@gmail.com">guk.polyanica@gmail.com</a>
+      <a class="btn btn--light" href="https://book-guk.otelms.com" target="_blank" rel="noopener">Book a room</a>
+    </div>
+  </div>
+
+
+  <!--
+    ФОТО
+    Зараз фото — тимчасові, з безкоштовного фотобанку Unsplash
+    (ліцензія дозволяє використання на сайті). Вони підвантажуються
+    за посиланням. Коли будуть власні фото — покладіть їх у папку
+    images/ і замініть src="https://images.unsplash.com/..." на
+    src="images/назва.jpg".
+  -->
+
+  <main id="top">
+
+    <!-- =====================================================
+         01. HERO — головний екран
+         Стилі: css/home.css → «01. HERO»
+         • фото повільно наближається (анімація heroZoom)
+         • величезне слово «ГУК» внизу (як у Hotellia)
+         • панель вибору дат (як у NOIRÉ)
+         ===================================================== -->
+    <section class="hero">
+      <div class="hero__media">
+        <img class="hero__bg photo"
+             src="https://images.unsplash.com/photo-1697305399657-8e5ec6cbdcde?auto=format&fit=crop&w=2400&q=80"
+             srcset="https://images.unsplash.com/photo-1697305399657-8e5ec6cbdcde?auto=format&fit=crop&w=1200&q=80 1200w,
+                     https://images.unsplash.com/photo-1697305399657-8e5ec6cbdcde?auto=format&fit=crop&w=2400&q=80 2400w"
+             sizes="100vw"
+             alt="Mist over the forested Carpathian slopes" fetchpriority="high">
+      </div>
+
+      <div class="container hero__inner">
+
+        <!-- Верхній рядок: дві короткі фрази по краях -->
+        <div class="hero__top">
+          <p class="hero__kicker reveal">Hotel & cottages · Polianytsia, Bukovel</p>
+          <p class="hero__kicker hero__kicker--right reveal">1 km to the ski lift</p>
+        </div>
+
+        <!-- Головний текст -->
+        <div class="hero__content">
+          <h1 class="hero__title reveal">Mountain quiet, <em>one kilometre</em> from&nbsp;Bukovel</h1>
+
+          <!-- Панель бронювання. Кнопка веде на систему бронювання готелю.
+               TODO: якщо otelms підтримує параметри дат у посиланні —
+               підключити їх у js/main.js (пункт 6). -->
+          <form class="booking-bar reveal" action="https://book-guk.otelms.com" target="_blank">
+            <label class="booking-bar__field">
+              <span>Check-in</span>
+              <input type="date" name="checkin">
+            </label>
+            <label class="booking-bar__field">
+              <span>Check-out</span>
+              <input type="date" name="checkout">
+            </label>
+            <label class="booking-bar__field">
+              <span>Guests</span>
+              <select name="guests">
+                <option>1 guest</option>
+                <option selected>2 guests</option>
+                <option>3 guests</option>
+                <option>4 guests</option>
+                <option>5+ guests</option>
+              </select>
+            </label>
+            <button class="btn btn--dark booking-bar__submit" type="submit">Check dates</button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Величезне слово-логотип унизу екрана -->
+      <p class="hero__wordmark" aria-hidden="true">GUK</p>
+    </section>
+
+
+    <!-- =====================================================
+         02. БІГУЧИЙ РЯДОК — пропозиції
+         Стилі: css/home.css → «02. БІГУЧИЙ РЯДОК»
+         Вміст продубльовано двічі для безшовної анімації.
+         ===================================================== -->
+    <div class="ticker" aria-label="Hotel offers">
+      <div class="ticker__track">
+        <ul class="ticker__group">
+          <li>Pay in two parts — half on arrival</li>
+          <li>10% off for military personnel</li>
+          <li>Children under 7 stay free on packages</li>
+          <li>Special terms for groups of 20+</li>
+          <li>Pets welcome by arrangement</li>
+        </ul>
+        <ul class="ticker__group" aria-hidden="true">
+          <li>Pay in two parts — half on arrival</li>
+          <li>10% off for military personnel</li>
+          <li>Children under 7 stay free on packages</li>
+          <li>Special terms for groups of 20+</li>
+          <li>Pets welcome by arrangement</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- =====================================================
+         03. ДІМ — великий заголовок + фото з підписом + цифри
+         Стилі: css/home.css → «03. ДІМ»
+         TODO: коротка історія готелю, імена власників.
+         ===================================================== -->
+    <section class="about section" id="about">
+      <div class="container">
+
+        <div class="about__grid">
+          <div class="about__text">
+            <span class="label reveal">01 · The house</span>
+            <h2 class="about__title reveal">A wooden house where mornings <em>begin with mist</em> at the window.</h2>
+            <div class="about__copy reveal">
+              <p>
+                A three-storey hotel and separate cottages in the Staishche tract. Rooms with balconies, a fireplace hall, a ground-floor restaurant and natural materials throughout.
+              </p>
+              <a class="link-arrow" href="#rooms">Choose a room</a>
+            </div>
+          </div>
+
+          <figure class="about__figure reveal reveal--image">
+            <img class="photo" src="https://images.unsplash.com/photo-1721714808874-35bcb03a8277?auto=format&fit=crop&w=1200&q=80" alt="A room with floor-to-ceiling windows in the mist" loading="lazy">
+            <figcaption>Morning in the mountains · the view from a room</figcaption>
+          </figure>
+        </div>
+
+        <!-- Цифри з описом (як у NOIRÉ) -->
+        <dl class="stats">
+          <div class="stats__item reveal">
+            <dd>1 km</dd>
+            <dt>to the ski lift</dt>
+            <p>A short walk or a few minutes by car, and you're on the Bukovel slopes.</p>
+          </div>
+          <div class="stats__item reveal">
+            <dd>11</dd>
+            <dt>types of rooms and cottages</dt>
+            <p>From a cosy double to a 180 m² cottage for a group.</p>
+          </div>
+          <div class="stats__item reveal">
+            <dd>24/7</dd>
+            <dt>front desk</dt>
+            <p>We'll check you in late at night and help with anything you need.</p>
+          </div>
+        </dl>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         04. НОМЕРИ — горизонтальна стрічка карток
+         Стилі: css/home.css → «04. НОМЕРИ»
+         Логіка (стрілки, перетягування мишею): js/main.js → пункт 7
+         Щоб додати номер — скопіюйте <article class="room">.
+         TODO: вписати ціни.
+         ===================================================== -->
+    <section class="rooms section section--alt" id="rooms">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="label reveal">02 · Rooms</span>
+            <h2 class="reveal">Rooms, suites <em>&amp; cottages</em></h2>
+          </div>
+          <div class="rooms__nav reveal">
+            <button class="round-btn" type="button" data-rooms-prev aria-label="Previous room">←</button>
+            <button class="round-btn" type="button" data-rooms-next aria-label="Next room">→</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="rooms__track" data-rooms-track tabindex="0" aria-label="Rooms — scroll sideways">
+
+        <article class="room">
+          <div class="room__media">
+            <img class="photo" src="https://images.unsplash.com/photo-1631805991633-eb01749753af?auto=format&fit=crop&w=1000&q=80" alt="A bed with white linen and a wooden headboard" loading="lazy">
+          </div>
+          <div class="room__body">
+            <h3>Double New</h3>
+            <p class="room__meta">20 m² · 2 guests · balcony</p>
+            <p class="room__price">from — ₴ / night</p>
+          </div>
+        </article>
+
+        <article class="room">
+          <div class="room__media">
+            <img class="photo" src="https://images.unsplash.com/photo-1786809611876-0f66ab8e1d6a?auto=format&fit=crop&w=1000&q=80" alt="A bed by a window overlooking the forest" loading="lazy">
+          </div>
+          <div class="room__body">
+            <h3>Family Room</h3>
+            <p class="room__meta">43 m² · 2 rooms</p>
+            <p class="room__price">from — ₴ / night</p>
+          </div>
+        </article>
+
+        <article class="room">
+          <div class="room__media">
+            <img class="photo" src="https://images.unsplash.com/photo-1705372334341-3780ebb7c97b?auto=format&fit=crop&w=1000&q=80" alt="A bed and lamp against a wooden wall" loading="lazy">
+          </div>
+          <div class="room__body">
+            <h3>Duplex</h3>
+            <p class="room__meta">45–50 m² · 4 guests · 2 levels</p>
+            <p class="room__price">from — ₴ / night</p>
+          </div>
+        </article>
+
+        <article class="room">
+          <div class="room__media">
+            <img class="photo" src="https://images.unsplash.com/photo-1670914131570-61ef0c05e388?auto=format&fit=crop&w=1000&q=80" alt="A wood stove in a timber cabin" loading="lazy">
+          </div>
+          <div class="room__body">
+            <h3>Suite with Fireplace</h3>
+            <p class="room__meta">Cottage · 55 m² · 3 rooms</p>
+            <p class="room__price">from — ₴ / night</p>
+          </div>
+        </article>
+
+        <article class="room">
+          <div class="room__media">
+            <img class="photo" src="https://images.unsplash.com/photo-1741948924635-13a7ddbc6a05?auto=format&fit=crop&w=1000&q=80" alt="A cottage with lit windows in a snowy forest" loading="lazy">
+          </div>
+          <div class="room__body">
+            <h3>Whole Cottage</h3>
+            <p class="room__meta">180 m² · 8 rooms</p>
+            <p class="room__price">from — ₴ / night</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         05. ВІДПОЧИНОК — список зліва, велике фото справа
+         Наведіть / натисніть на пункт — фото змінюється (як у NOIRÉ).
+         Стилі: css/home.css → «05. ВІДПОЧИНОК»
+         Логіка: js/main.js → пункт 8
+         ===================================================== -->
+    <section class="experiences section" id="experiences">
+      <div class="container experiences__grid">
+
+        <!-- Фото: усі лежать стопкою, видно лише активне -->
+        <div class="experiences__media reveal reveal--image">
+          <img class="photo is-active" data-exp-image="0" src="https://images.unsplash.com/photo-1734256991510-51011f7d5aad?auto=format&fit=crop&w=1400&q=80" alt="A hot tub in a snowy forest" loading="lazy">
+          <img class="photo" data-exp-image="1" src="https://images.unsplash.com/photo-1759302354553-cf87ceb9135c?auto=format&fit=crop&w=1400&q=80" alt="A wooden sauna with a stove" loading="lazy">
+          <img class="photo" data-exp-image="2" src="https://images.unsplash.com/photo-1562050344-f7ad946cee35?auto=format&fit=crop&w=1400&q=80" alt="A long table with candles" loading="lazy">
+          <img class="photo" data-exp-image="3" src="https://images.unsplash.com/photo-1698933787104-3f91cf25909c?auto=format&fit=crop&w=1400&q=80" alt="A stove in a wooden living room" loading="lazy">
+        </div>
+
+        <div class="experiences__content">
+          <span class="label reveal">03 · Unwind</span>
+          <h2 class="reveal">Days that run <em>on mountain</em> time</h2>
+
+          <ol class="experiences__list">
+            <li class="exp is-active reveal" data-exp="0" tabindex="0">
+              <span class="exp__num">01</span>
+              <div>
+                <h3>Pool &amp; jacuzzi</h3>
+                <p>An outdoor pool in the warm season, and a jacuzzi after skiing or a mountain hike.</p>
+              </div>
+            </li>
+            <li class="exp reveal" data-exp="1" tabindex="0">
+              <span class="exp__num">02</span>
+              <div>
+                <h3>Sauna</h3>
+                <p>Deep warmth while it's freezing outside. Included in our stay packages.</p>
+              </div>
+            </li>
+            <li class="exp reveal" data-exp="2" tabindex="0">
+              <span class="exp__num">03</span>
+              <div>
+                <h3>GUK Restaurant</h3>
+                <p>Signature Carpathian-style cooking on the hotel's ground floor.</p>
+              </div>
+            </li>
+            <li class="exp reveal" data-exp="3" tabindex="0">
+              <span class="exp__num">04</span>
+              <div>
+                <h3>Fireplace hall &amp; barbecue</h3>
+                <p>Evenings by the fire, indoors or out in the fresh air.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         06. ФОТО НА ВСЮ ШИРИНУ + цитата
+         Фото «пливе» повільніше за сторінку (паралакс, js пункт 9).
+         Стилі: css/home.css → «06. ПАНОРАМА»
+         ===================================================== -->
+    <section class="panorama">
+      <img class="panorama__bg photo" data-parallax src="https://images.unsplash.com/photo-1718668691088-ad203aff1f3e?auto=format&fit=crop&crop=entropy&w=2400&h=1500&q=80" alt="" loading="lazy">
+      <div class="container panorama__inner">
+        <p class="panorama__quote reveal">Mountains all around.<br><em>Quiet within.</em></p>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         07. ДЕНЬ У ГУКУ — таймлайн з фото
+         Стилі: css/home.css → «07. ДЕНЬ»
+         TODO: уточнити реальні години (сніданок, ресторан).
+         ===================================================== -->
+    <section class="day section" id="day">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="label reveal">04 · One day</span>
+            <h2 class="reveal">From first light <em>to the fireside</em></h2>
+          </div>
+        </div>
+
+        <ol class="day__grid">
+          <li class="moment reveal">
+            <div class="moment__media"><img class="photo" src="https://images.unsplash.com/photo-1626197849364-664e6b759261?auto=format&fit=crop&w=800&q=80" alt="Spruces in the morning mist" loading="lazy"></div>
+            <span class="moment__time">08:00</span>
+            <h3>Morning</h3>
+            <p>Mist over the spruces and a hot breakfast.</p>
+          </li>
+          <li class="moment reveal">
+            <div class="moment__media"><img class="photo" src="https://images.unsplash.com/photo-1718668691088-ad203aff1f3e?auto=format&fit=crop&w=800&q=80" alt="A mountain in low cloud" loading="lazy"></div>
+            <span class="moment__time">10:00</span>
+            <h3>Slopes</h3>
+            <p>One kilometre to the lift, and you're on the pistes.</p>
+          </li>
+          <li class="moment reveal">
+            <div class="moment__media"><img class="photo" src="https://images.unsplash.com/photo-1713706980185-26059d47ea87?auto=format&fit=crop&w=800&q=80" alt="A wooden hot tub in the forest" loading="lazy"></div>
+            <span class="moment__time">16:00</span>
+            <h3>Warmth</h3>
+            <p>Sauna and jacuzzi after a cold day.</p>
+          </li>
+          <li class="moment reveal">
+            <div class="moment__media"><img class="photo" src="https://images.unsplash.com/photo-1767463130670-88af6bb8f080?auto=format&fit=crop&w=800&q=80" alt="A stone house and wooden hot tub in the evening" loading="lazy"></div>
+            <span class="moment__time">20:00</span>
+            <h3>Evening</h3>
+            <p>Dinner, the fire and the quiet of the mountains.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         08. ЩО ВХОДИТЬ У ПРОЖИВАННЯ
+         Стилі: css/home.css → «08. ЩО ВХОДИТЬ»
+         ===================================================== -->
+    <section class="included section section--alt">
+      <div class="container included__grid">
+        <div>
+          <span class="label reveal">05 · For every guest</span>
+          <h2 class="reveal">Included <em>in your stay</em></h2>
+        </div>
+        <ul class="included__list">
+          <li class="reveal"><h3>Wi-Fi</h3><p>Free for all guests.</p></li>
+          <li class="reveal"><h3>Parking</h3><p>Free spaces for guests arriving by car.</p></li>
+          <li class="reveal"><h3>Ski drying room</h3><p>A separate room for gear and clothing.</p></li>
+          <li class="reveal"><h3>Housekeeping</h3><p>Fresh towels daily, bed linen every three days.</p></li>
+          <li class="reveal"><h3>Transfers</h3><p>We'll pick you up and drop you off, on request.</p></li>
+          <li class="reveal"><h3>Baby cot</h3><p>On request, as is an extra bed.</p></li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         09. ПРОПОЗИЦІЇ — одна велика + дві малі (як у NOIRÉ)
+         Стилі: css/home.css → «09. ПРОПОЗИЦІЇ»
+         TODO: перевірити актуальність цін і умов.
+         ===================================================== -->
+    <section class="packages section" id="packages">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="label reveal">06 · Offers</span>
+            <h2 class="reveal">Reasons to <em>stay</em> a little longer</h2>
+          </div>
+          <a class="link-arrow reveal" href="tel:+380988270243">Ask about terms</a>
+        </div>
+
+        <div class="packages__grid">
+          <article class="offer offer--big reveal">
+            <div class="offer__media"><img class="photo" src="https://images.unsplash.com/photo-1734256991510-51011f7d5aad?auto=format&fit=crop&w=1400&q=80" alt="A hot tub in a snowy forest" loading="lazy"></div>
+            <div class="offer__body">
+              <span class="label">All inclusive</span>
+              <h3>Nothing to worry about</h3>
+              <p>Three meals a day, drinks, pool, sauna, jacuzzi and barbecue area. Children under 7 stay free.</p>
+              <a class="link-arrow" href="tel:+380988270243">Book this package</a>
+            </div>
+          </article>
+
+          <article class="offer reveal">
+            <div class="offer__media"><img class="photo" src="https://images.unsplash.com/photo-1693325012025-44a677c80258?auto=format&fit=crop&w=900&q=80" alt="Mountains in the mist" loading="lazy"></div>
+            <span class="label">Velvet season</span>
+            <h3>From 600 UAH per person</h3>
+            <p>Breakfast, pool, jacuzzi and barbecue.</p>
+          </article>
+
+          <article class="offer reveal">
+            <div class="offer__media"><img class="photo" src="https://images.unsplash.com/photo-1562050344-f7ad946cee35?auto=format&fit=crop&w=900&q=80" alt="A table set for a celebration" loading="lazy"></div>
+            <span class="label">Groups of 20+</span>
+            <h3>For teams and tours</h3>
+            <p>Buffet, barbecue area, and free places for the group leader and driver.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         10. ВІДГУКИ — шаблон (вимкнений до реальних відгуків)
+         ===================================================== -->
+    <!--
+    <section class="reviews section section--alt">
+      ...
+    </section>
+    -->
+
+
+    <!-- =====================================================
+         11. РОЗТАШУВАННЯ ТА КОНТАКТИ
+         Стилі: css/home.css → «11. РОЗТАШУВАННЯ»
+         TODO: додати час дороги від Яремче / Франківська.
+         ===================================================== -->
+    <section class="location section section--alt" id="location">
+      <div class="container location__grid">
+
+        <div class="location__text">
+          <span class="label reveal">07 · Getting here</span>
+          <h2 class="reveal">Polianytsia, <em>Staishche</em> tract</h2>
+
+          <dl class="location__list reveal">
+            <div><dt>Address</dt><dd>265 Staishche tract, Polianytsia village</dd></div>
+            <div><dt>Ski lift</dt><dd>≈ 1 km</dd></div>
+            <div><dt>Phone</dt><dd><a href="tel:+380988270243">+38 098 827 02 43</a></dd></div>
+            <div><dt>Email</dt><dd><a href="mailto:guk.polyanica@gmail.com">guk.polyanica@gmail.com</a></dd></div>
+          </dl>
+
+          <a class="btn btn--outline reveal" href="https://www.google.com/maps/search/?api=1&query=%D0%93%D0%BE%D1%82%D0%B5%D0%BB%D1%8C+%D0%93%D1%83%D0%BA+%D0%9F%D0%BE%D0%BB%D1%8F%D0%BD%D0%B8%D1%86%D1%8F" target="_blank" rel="noopener">Get directions</a>
+        </div>
+
+        <div class="location__map reveal reveal--image">
+          <iframe
+            title="Hotel GUK on the map"
+            src="https://maps.google.com/maps?q=%D0%93%D0%BE%D1%82%D0%B5%D0%BB%D1%8C+%D0%93%D1%83%D0%BA+%D0%9F%D0%BE%D0%BB%D1%8F%D0%BD%D0%B8%D1%86%D1%8F&z=13&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         12. ЧАСТІ ПИТАННЯ
+         Стилі: css/home.css → «12. ПИТАННЯ»
+         ===================================================== -->
+    <section class="faq section">
+      <div class="container faq__grid">
+        <div>
+          <span class="label reveal">08 · Before you travel</span>
+          <h2 class="reveal">Frequently asked <em>questions</em></h2>
+        </div>
+        <div class="faq__list reveal">
+          <details class="faq__item">
+            <summary>Can I bring my pet?</summary>
+            <p>Yes, by prior arrangement. Please message or call us before booking.</p>
+          </details>
+          <details class="faq__item">
+            <summary>How does payment work?</summary>
+            <p>You pay half the cost of your stay at check-in and the rest at check-out.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Do you have a baby cot?</summary>
+            <p>Yes, on request. We can also add an extra bed to most rooms.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Are there discounts for military personnel?</summary>
+            <p>Yes, 10% off rooms occupied by service members.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Do you host groups?</summary>
+            <p>Yes. Groups of 20 or more get special terms: a buffet, the barbecue area, and free places for the group leader and driver.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       13. ФУТЕР — фото, великий заклик і величезне слово «ГУК»
+       Стилі: css/footer.css
+       ===================================================== -->
+  <footer class="footer">
+    <img class="footer__bg photo" src="https://images.unsplash.com/photo-1741948924635-13a7ddbc6a05?auto=format&fit=crop&w=2400&q=80" alt="" loading="lazy">
+
+    <div class="container">
+
+      <!-- Заклик -->
+      <div class="footer__cta">
+        <p class="label">Polianytsia · Carpathians</p>
+        <h2>Come for <em>the quiet.</em></h2>
+        <a class="btn btn--light" href="https://book-guk.otelms.com" target="_blank" rel="noopener">Book now</a>
+      </div>
+
+      <div class="footer__grid">
+        <div>
+          <p class="footer__title">Address</p>
+          <p class="footer__text">265 Staishche tract, Polianytsia<br>Front desk open 24/7</p>
+        </div>
+        <div>
+          <p class="footer__title">Contact</p>
+          <ul class="footer__list">
+            <li><a href="tel:+380988270243">+38 098 827 02 43</a></li>
+            <li><a href="tel:+380992229990">+38 099 222 99 90</a></li>
+            <li><a href="mailto:guk.polyanica@gmail.com">guk.polyanica@gmail.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__title">Explore</p>
+          <ul class="footer__list">
+            <li><a href="#rooms">Rooms</a></li>
+            <li><a href="#experiences">Unwind</a></li>
+            <li><a href="#packages">Offers</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__title">Follow</p>
+          <ul class="footer__list">
+            <li><a href="https://www.instagram.com/hotel_guk/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@hotelguk" target="_blank" rel="noopener">TikTok</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© <span id="year">2026</span> Hotel GUK</p>
+        <p>Photos: Unsplash (temporary)</p>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </div>
+
+    <!-- Величезне слово на всю ширину -->
+    <p class="footer__wordmark" aria-hidden="true">GUK</p>
+  </footer>
+
+</body>
+</html>

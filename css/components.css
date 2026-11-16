@@ -1,0 +1,183 @@
+/* =========================================================
+   КОМПОНЕНТИ
+   ---------------------------------------------------------
+   Елементи, що повторюються по всьому сайту:
+   кнопки, підписи-мітки, заголовок секції, текстові посилання.
+   ========================================================= */
+
+/* ---------- Кнопки ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  min-height: 48px;
+  padding: 0.75em 1.5em;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.25s var(--ease), color 0.25s var(--ease),
+    border-color 0.25s var(--ease);
+}
+
+/* Темна кнопка — на світлому фоні */
+.btn--dark {
+  background: var(--color-ink);
+  color: var(--color-surface);
+}
+.btn--dark:hover {
+  background: var(--color-dark);
+}
+
+/* Світла кнопка — на фото чи темному фоні.
+   Кольори фіксовані: однакові у світлій і темній темі */
+.btn--light {
+  background: var(--color-cream);
+  color: var(--color-graphite);
+}
+.btn--light:hover {
+  background: #e6e4df;
+}
+
+/* Контурна кнопка на фото */
+.btn--ghost {
+  border-color: rgb(255 255 255 / 0.6);
+  color: #fff;
+}
+.btn--ghost:hover {
+  background: rgb(255 255 255 / 0.12);
+  border-color: #fff;
+}
+
+/* Контурна кнопка на світлому фоні */
+.btn--outline {
+  border-color: var(--color-ink);
+  color: var(--color-ink);
+}
+.btn--outline:hover {
+  background: var(--color-ink);
+  color: var(--color-surface);
+}
+
+/* Мала кнопка (у шапці) */
+.btn--small {
+  min-height: 40px;
+  padding: 0.5em 1.1em;
+}
+
+/* Група кнопок поруч */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ---------- Мітка над заголовком (eyebrow) ---------- */
+.label {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+/* ---------- Заголовок секції: назва зліва, посилання справа ---------- */
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: clamp(32px, 5vw, 56px);
+}
+
+.section-head h2 {
+  max-width: 16ch;
+}
+
+/* ---------- Текстове посилання зі стрілкою ---------- */
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  font-size: var(--fs-small);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  white-space: nowrap;
+}
+.link-arrow::after {
+  content: "→";
+  transition: transform 0.25s var(--ease);
+}
+.link-arrow:hover::after {
+  transform: translateX(4px);
+}
+
+/* ---------- Кругла кнопка зі стрілкою (гортання номерів) ---------- */
+.round-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--color-line);
+  border-radius: 50%;
+  background: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.25s var(--ease), color 0.25s var(--ease),
+    border-color 0.25s var(--ease);
+}
+.round-btn:hover {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+  color: var(--color-bg);
+}
+
+/* =========================================================
+   АНІМАЦІЇ ПОЯВИ ПРИ ПРОКРУТЦІ
+   ---------------------------------------------------------
+   Додайте елементу клас .reveal — він плавно з'явиться знизу,
+   коли доскролять до нього (логіка: js/main.js → пункт 5).
+   .reveal--image — фото «відкривається» шторкою знизу вгору.
+   Якщо JavaScript вимкнений — усе видно одразу (клас .js
+   на <html> ставить main.js).
+   ========================================================= */
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 1s var(--ease), transform 1s var(--ease);
+  transition-delay: var(--delay, 0s);
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.js .reveal--image {
+  opacity: 1;
+  transform: none;
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path 1.4s var(--ease);
+}
+
+.js .reveal--image.is-visible {
+  clip-path: inset(0 0 0 0);
+}
+
+/* ---------- Адаптивність компонентів ---------- */
+@media (max-width: 720px) {
+  .section-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

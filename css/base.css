@@ -1,0 +1,127 @@
+/* =========================================================
+   БАЗОВІ СТИЛІ
+   ---------------------------------------------------------
+   Скидання стилів браузера, типографіка, контейнер.
+   ========================================================= */
+
+/* ---------- Скидання ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height); /* щоб якорі не ховались під шапкою */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.4s var(--ease), color 0.4s var(--ease);
+}
+
+/* Коли відкрите мобільне меню — сторінка не прокручується */
+body.is-locked {
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+/* ---------- Типографіка ---------- */
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  text-wrap: balance;        /* рівні рядки в заголовках, без «висячих» слів */
+  overflow-wrap: break-word; /* довгі слова не вилазять за край */
+}
+
+h1 { font-size: var(--fs-h1); line-height: 1.02; }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); line-height: 1.2; }
+
+/* Курсивне слово в заголовку — фірмовий прийом */
+h1 em,
+h2 em {
+  font-style: italic;
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+/* ---------- Контейнер: обмежує ширину контенту ---------- */
+.container {
+  width: min(100% - 2 * var(--gutter), var(--container));
+  margin-inline: auto;
+}
+
+/* ---------- Секція: стандартні вертикальні відступи ---------- */
+.section {
+  padding-block: var(--section-space);
+}
+
+.section--alt {
+  background: var(--color-bg-alt);
+}
+
+/* ---------- Фото, що заповнює свій блок повністю (обрізається по краях) ---------- */
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Доступність ---------- */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Текст лише для екранних читачів */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Якщо користувач вимкнув анімації в системі */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
