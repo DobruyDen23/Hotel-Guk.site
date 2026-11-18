@@ -163,15 +163,26 @@
   transform: none;
 }
 
+/* Шторка ховає ВМІСТ блоку (фото, карту), а не сам блок.
+   Важливо: якщо сховати сам блок, браузер вважає його невидимим
+   і анімація ніколи не запуститься — фото так і не з'явиться. */
 .js .reveal--image {
   opacity: 1;
   transform: none;
+}
+
+.js .reveal--image > * {
   clip-path: inset(100% 0 0 0);
   transition: clip-path 1.4s var(--ease);
 }
 
-.js .reveal--image.is-visible {
+.js .reveal--image.is-visible > * {
   clip-path: inset(0 0 0 0);
+}
+
+/* Підпис під фото (figcaption) не ховаємо — лише саме фото */
+.js .reveal--image > figcaption {
+  clip-path: none;
 }
 
 /* ---------- Адаптивність компонентів ---------- */
