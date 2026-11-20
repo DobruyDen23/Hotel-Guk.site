@@ -52,7 +52,8 @@
   --header-height: 76px;
 
   /* ---------- Інше ---------- */
-  --radius: 6px;
+  --radius: 6px;          /* кнопки, поля          */
+  --radius-photo: 18px;   /* заокруглення всіх фото */
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
 
 
