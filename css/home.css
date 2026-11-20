@@ -251,7 +251,7 @@
 .about__grid {
   display: grid;
   grid-template-columns: 1.35fr 1fr;
-  align-items: end;
+  align-items: center; /* текст по центру висоти фото */
   gap: clamp(40px, 7vw, 112px);
 }
 
@@ -301,6 +301,7 @@
 .stats__item {
   padding-top: 24px;
   border-top: 1px solid var(--color-line);
+  text-align: center; /* число, назва й опис — по центру колонки */
 }
 
 .stats dd {
@@ -317,6 +318,7 @@
 
 .stats p {
   max-width: 30ch;
+  margin-inline: auto;
   font-size: var(--fs-small);
   color: var(--color-muted);
 }
