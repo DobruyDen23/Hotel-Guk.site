@@ -172,12 +172,12 @@
 }
 
 .js .reveal--image > * {
-  clip-path: inset(100% 0 0 0);
+  clip-path: inset(100% 0 0 0 round var(--radius-photo));
   transition: clip-path 1.4s var(--ease);
 }
 
 .js .reveal--image.is-visible > * {
-  clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0 round var(--radius-photo));
 }
 
 /* Підпис під фото (figcaption) не ховаємо — лише саме фото */
