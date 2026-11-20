@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* ---------- 8. ВІДПОЧИНОК: ПЕРЕМИКАННЯ ФОТО ----------
-     Наведення (або клік / Enter) на пункт списку показує
+     Клік (або Enter) на пункт списку показує
      відповідне фото: data-exp="1" ↔ data-exp-image="1". */
   const expItems = document.querySelectorAll("[data-exp]");
   const expImages = document.querySelectorAll("[data-exp-image]");
@@ -245,11 +245,8 @@ document.addEventListener("DOMContentLoaded", () => {
   mobileQuery.addEventListener("change", placeExpMedia);
 
   expItems.forEach((item) => {
-    // Наведення — лише для миші. На телефоні дотик теж викликає
-    // «mouseenter», і пункт перемикався двічі — звідси було смикання.
-    item.addEventListener("pointerenter", (e) => {
-      if (e.pointerType === "mouse") showExperience(item.dataset.exp);
-    });
+    // Пункт перемикається лише по кліку (на комп'ютері й телефоні),
+    // наведення миші нічого не змінює — так попросив власник.
     item.addEventListener("click", () => showExperience(item.dataset.exp));
     item.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
