@@ -146,7 +146,7 @@
       <div class="hero__media">
     <img
         class="hero__bg photo"
-        src="./images/MaidHeader.jpeg"
+        src="./images/hero/main.jpg"
         alt="Hotel GUK in the Carpathians"
         fetchpriority="high"
       >
@@ -241,7 +241,7 @@
           </div>
 
           <figure class="about__figure reveal reveal--image">
-            <img class="photo" src="./images/Fireplace.jpeg" alt="The fireplace hall with armchairs and ski gear" loading="lazy">
+            <img class="photo" src="./images/about/fireplace-hall.jpg" alt="The fireplace hall with armchairs and ski gear" loading="lazy">
             <figcaption>The fireplace hall · after a day on the slopes</figcaption>
           </figure>
         </div>
@@ -274,6 +274,9 @@
          Стилі: css/home.css → «04. НОМЕРИ»
          Логіка (стрілки, перетягування мишею): js/main.js → пункт 7
          Щоб додати номер — скопіюйте <article class="room">.
+         Фото кожного номера — в окремій папці images/rooms/назва-номера/:
+         1.jpg — головне фото, 2.jpg — з'являється при наведенні.
+         Описи взято зі старого сайту guk-polyanica.com.ua/rooms/
          TODO: вписати ціни.
          ===================================================== -->
     <section class="rooms section section--alt" id="rooms">
@@ -292,57 +295,156 @@
 
       <div class="rooms__track" data-rooms-track tabindex="0" aria-label="Rooms — scroll sideways">
 
+        <!-- Номер: Double New · фото: images/rooms/double-new/ -->
         <article class="room">
           <div class="room__media">
-            <img class="photo" src="https://images.unsplash.com/photo-1631805991633-eb01749753af?auto=format&fit=crop&w=1000&q=80" alt="A bed with white linen and a wooden headboard" loading="lazy">
+            <img class="photo" src="./images/rooms/double-new/1.jpg" alt="A double room with a double bed" loading="lazy">
+            <img class="photo room__photo-alt" src="./images/rooms/double-new/2.jpg" alt="" loading="lazy">
           </div>
           <div class="room__body">
             <h3>Double New</h3>
-            <p class="room__meta">20 m² · 2 guests · balcony</p>
+            <p class="room__desc">A double room in the main hotel</p>
+            <p class="room__meta">20 m² · 2 guests · double bed</p>
             <p class="room__price">from — ₴ / night</p>
           </div>
         </article>
 
+        <!-- Номер: Twin New · фото: images/rooms/twin-new/ -->
         <article class="room">
           <div class="room__media">
-            <img class="photo" src="https://images.unsplash.com/photo-1786809611876-0f66ab8e1d6a?auto=format&fit=crop&w=1000&q=80" alt="A bed by a window overlooking the forest" loading="lazy">
+            <img class="photo" src="./images/rooms/twin-new/1.jpg" alt="A room with two single beds" loading="lazy">
+            <img class="photo room__photo-alt" src="./images/rooms/twin-new/2.jpg" alt="" loading="lazy">
+          </div>
+          <div class="room__body">
+            <h3>Twin New</h3>
+            <p class="room__desc">A double room with two separate beds</p>
+            <p class="room__meta">20 m² · 2 guests · 2 single beds</p>
+            <p class="room__price">from — ₴ / night</p>
+          </div>
+        </article>
+
+        <!-- Номер: Double · фото: images/rooms/double/ -->
+        <article class="room">
+          <div class="room__media">
+            <img class="photo" src="./images/rooms/double/1.jpg" alt="A double room with direct outdoor access" loading="lazy">
+            <img class="photo room__photo-alt" src="./images/rooms/double/2.jpg" alt="" loading="lazy">
+          </div>
+          <div class="room__body">
+            <h3>Double</h3>
+            <p class="room__desc">A double room with its own entrance from outside</p>
+            <p class="room__meta">20 m² · 2 guests · double or 2 single beds</p>
+            <p class="room__price">from — ₴ / night</p>
+          </div>
+        </article>
+
+        <!-- Номер: Double Cottage · фото: images/rooms/double-cottage/ -->
+        <article class="room">
+          <div class="room__media">
+            <img class="photo" src="./images/rooms/double-cottage/1.jpg" alt="A wood-panelled double room in the cottage" loading="lazy">
+            <img class="photo room__photo-alt" src="./images/rooms/double-cottage/2.jpg" alt="" loading="lazy">
+          </div>
+          <div class="room__body">
+            <h3>Double Cottage</h3>
+            <p class="room__desc">A double room in the cottage</p>
+            <p class="room__meta">20 m² · 2 guests · wooden interior</p>
+            <p class="room__price">from — ₴ / night</p>
+          </div>
+        </article>
+
+        <!-- Номер: Triple New · фото: images/rooms/triple-new/ -->
+        <article class="room">
+          <div class="room__media">
+            <img class="photo" src="./images/rooms/triple-new/1.jpg" alt="A triple room with a balcony" loading="lazy">
+            <img class="photo room__photo-alt" src="./images/rooms/triple-new/2.jpg" alt="" loading="lazy">
+          </div>
+          <div class="room__body">
+            <h3>Triple New</h3>
+            <p class="room__desc">A triple room with a balcony</p>
+            <p class="room__meta">25 m² · 3 guests · balcony</p>
+            <p class="room__price">from — ₴ / night</p>
+          </div>
+        </article>
+
+        <!-- Номер: Family Room · фото: images/rooms/family/ -->
+        <article class="room">
+          <div class="room__media">
+            <img class="photo" src="./images/rooms/family/1.jpg" alt="A two-room family room" loading="lazy">
+            <img class="photo room__photo-alt" src="./images/rooms/family/2.jpg" alt="" loading="lazy">
           </div>
           <div class="room__body">
             <h3>Family Room</h3>
-            <p class="room__meta">43 m² · 2 rooms</p>
+            <p class="room__desc">Two rooms and a balcony, made for families</p>
+            <p class="room__meta">43 m² · 4 guests · 2 rooms</p>
             <p class="room__price">from — ₴ / night</p>
           </div>
         </article>
 
+        <!-- Номер: Duplex · фото: images/rooms/duplex/ -->
         <article class="room">
           <div class="room__media">
-            <img class="photo" src="https://images.unsplash.com/photo-1705372334341-3780ebb7c97b?auto=format&fit=crop&w=1000&q=80" alt="A bed and lamp against a wooden wall" loading="lazy">
+            <img class="photo" src="./images/rooms/duplex/1.jpg" alt="A two-level room with a staircase" loading="lazy">
+            <img class="photo room__photo-alt" src="./images/rooms/duplex/2.jpg" alt="" loading="lazy">
           </div>
           <div class="room__body">
             <h3>Duplex</h3>
+            <p class="room__desc">A two-level room</p>
             <p class="room__meta">45–50 m² · 4 guests · 2 levels</p>
             <p class="room__price">from — ₴ / night</p>
           </div>
         </article>
 
+        <!-- Номер: Quadruple · фото: images/rooms/quadruple/ -->
         <article class="room">
           <div class="room__media">
-            <img class="photo" src="https://images.unsplash.com/photo-1670914131570-61ef0c05e388?auto=format&fit=crop&w=1000&q=80" alt="A wood stove in a timber cabin" loading="lazy">
+            <img class="photo" src="./images/rooms/quadruple/1.jpg" alt="A room for four with two double beds" loading="lazy">
+            <img class="photo room__photo-alt" src="./images/rooms/quadruple/2.jpg" alt="" loading="lazy">
           </div>
           <div class="room__body">
-            <h3>Suite with Fireplace</h3>
-            <p class="room__meta">Cottage · 55 m² · 3 rooms</p>
+            <h3>Quadruple</h3>
+            <p class="room__desc">A single room that sleeps four</p>
+            <p class="room__meta">20 m² · 4 guests · 2 double beds</p>
             <p class="room__price">from — ₴ / night</p>
           </div>
         </article>
 
+        <!-- Номер: Люкс із каміном · фото: images/rooms/suite-fireplace/ -->
         <article class="room">
           <div class="room__media">
-            <img class="photo" src="https://images.unsplash.com/photo-1741948924635-13a7ddbc6a05?auto=format&fit=crop&w=1000&q=80" alt="A cottage with lit windows in a snowy forest" loading="lazy">
+            <img class="photo" src="./images/rooms/suite-fireplace/1.jpg" alt="The fireplace in the suite" loading="lazy">
+            <img class="photo room__photo-alt" src="./images/rooms/suite-fireplace/2.jpg" alt="" loading="lazy">
+          </div>
+          <div class="room__body">
+            <h3>Suite with Fireplace</h3>
+            <p class="room__desc">Two bedrooms and a lounge with a fireplace, in the cottage</p>
+            <p class="room__meta">55 m² · 4 guests · 3 rooms</p>
+            <p class="room__price">from — ₴ / night</p>
+          </div>
+        </article>
+
+        <!-- Номер: Мансардний · фото: images/rooms/attic/ -->
+        <article class="room">
+          <div class="room__media">
+            <img class="photo" src="./images/rooms/attic/1.jpg" alt="An attic room with wooden walls" loading="lazy">
+            <img class="photo room__photo-alt" src="./images/rooms/attic/2.jpg" alt="" loading="lazy">
+          </div>
+          <div class="room__body">
+            <h3>Attic Room</h3>
+            <p class="room__desc">A cosy room under the cottage roof</p>
+            <p class="room__meta">20 m² · 4 guests · 2 double beds</p>
+            <p class="room__price">from — ₴ / night</p>
+          </div>
+        </article>
+
+        <!-- Номер: Котедж повністю · фото: images/rooms/cottage/ -->
+        <article class="room">
+          <div class="room__media">
+            <img class="photo" src="./images/rooms/cottage/1.jpg" alt="A room in the cottage" loading="lazy">
+            <img class="photo room__photo-alt" src="./images/rooms/cottage/2.jpg" alt="" loading="lazy">
           </div>
           <div class="room__body">
             <h3>Whole Cottage</h3>
-            <p class="room__meta">180 m² · 8 rooms</p>
+            <p class="room__desc">The entire cottage, with a kitchen and fireplace</p>
+            <p class="room__meta">180 m² · up to 20 guests · 8 rooms</p>
             <p class="room__price">from — ₴ / night</p>
           </div>
         </article>
@@ -362,11 +464,11 @@
 
         <!-- Фото: усі лежать стопкою, видно лише активне -->
         <div class="experiences__media reveal reveal--image">
-          <img class="photo photo--bottom is-active" data-exp-image="0" src="./images/Jacuzzi.jpeg" alt="A guest in the jacuzzi on a terrace overlooking the mountains" loading="lazy">
-          <img class="photo" data-exp-image="1" src="./images/sauna-room.jpg" alt="A wooden sauna in warm light" loading="lazy">
-          <img class="photo photo--bottom" data-exp-image="2" src="./images/Restourant.jpeg" alt="A table set for a feast in the restaurant" loading="lazy">
-          <img class="photo" data-exp-image="3" src="./images/fireplace-evening.jpg" alt="An evening with a guitar by the fireplace" loading="lazy">
-          <img class="photo" data-exp-image="4" src="./images/Events/yoga.jpg" alt="Practice and conference hall" loading="lazy">
+          <img class="photo photo--bottom is-active" data-exp-image="0" src="./images/rest/jacuzzi.jpg" alt="A guest in the jacuzzi on a terrace overlooking the mountains" loading="lazy">
+          <img class="photo" data-exp-image="1" src="./images/rest/sauna.jpg" alt="A wooden sauna in warm light" loading="lazy">
+          <img class="photo photo--bottom" data-exp-image="2" src="./images/rest/restaurant.jpg" alt="A table set for a feast in the restaurant" loading="lazy">
+          <img class="photo" data-exp-image="3" src="./images/rest/fireplace-evening.jpg" alt="An evening with a guitar by the fireplace" loading="lazy">
+          <img class="photo" data-exp-image="4" src="./images/leisure/yoga.jpg" alt="Practice and conference hall" loading="lazy">
         </div>
 
         <div class="experiences__content">
@@ -445,13 +547,13 @@
 
         <ol class="day__grid">
           <li class="moment reveal">
-            <div class="moment__media"><img class="photo" src="./images/Breakfast.jpeg" alt="The breakfast buffet" loading="lazy"></div>
+            <div class="moment__media"><img class="photo" src="./images/day/breakfast.jpg" alt="The breakfast buffet" loading="lazy"></div>
             <span class="moment__time">08:00</span>
             <h3>Morning</h3>
             <p>A hot breakfast and mist over the spruces.</p>
           </li>
           <li class="moment reveal">
-            <div class="moment__media"><img class="photo" src="./images/ski-slopes.jpg" alt="Snowy Bukovel slopes under low cloud" loading="lazy"></div>
+            <div class="moment__media"><img class="photo" src="./images/day/ski-slopes.jpg" alt="Snowy Bukovel slopes under low cloud" loading="lazy"></div>
             <span class="moment__time">10:00</span>
             <h3>Slopes</h3>
             <p>A few minutes by car, and you're on the pistes.</p>
@@ -529,7 +631,7 @@
           </article>
 
           <article class="offer reveal">
-            <div class="offer__media"><img class="photo" src="./images/Events/yoga.jpg" alt="A yoga class" loading="lazy"></div>
+            <div class="offer__media"><img class="photo" src="./images/leisure/yoga.jpg" alt="A yoga class" loading="lazy"></div>
             <span class="label">Leisure</span>
             <h3>Yoga</h3>
             <p>Three times a week from 10:00 to 11:00, yoga to bring body and mind into balance.</p>

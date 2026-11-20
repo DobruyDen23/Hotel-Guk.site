@@ -146,7 +146,7 @@
       <div class="hero__media">
     <img
         class="hero__bg photo"
-        src="./images/MaidHeader.jpeg"
+        src="./images/hero/main.jpg"
         alt="Готель GUK у Карпатах"
         fetchpriority="high"
       >
@@ -243,7 +243,7 @@
           </div>
 
           <figure class="about__figure reveal reveal--image">
-            <img class="photo" src="./images/Fireplace.jpeg" alt="Камінна зала з кріслами й лижним спорядженням" loading="lazy">
+            <img class="photo" src="./images/about/fireplace-hall.jpg" alt="Камінна зала з кріслами й лижним спорядженням" loading="lazy">
             <figcaption>Камінна зала · після катання</figcaption>
           </figure>
         </div>
@@ -276,6 +276,9 @@
          Стилі: css/home.css → «04. НОМЕРИ»
          Логіка (стрілки, перетягування мишею): js/main.js → пункт 7
          Щоб додати номер — скопіюйте <article class="room">.
+         Фото кожного номера — в окремій папці images/rooms/назва-номера/:
+         1.jpg — головне фото, 2.jpg — з'являється при наведенні.
+         Описи взято зі старого сайту guk-polyanica.com.ua/rooms/
          TODO: вписати ціни.
          ===================================================== -->
     <section class="rooms section section--alt" id="rooms">
@@ -294,57 +297,156 @@
 
       <div class="rooms__track" data-rooms-track tabindex="0" aria-label="Номери — гортайте вбік">
 
+        <!-- Номер: Double New · фото: images/rooms/double-new/ -->
         <article class="room">
           <div class="room__media">
-            <img class="photo" src="https://images.unsplash.com/photo-1631805991633-eb01749753af?auto=format&fit=crop&w=1000&q=80" alt="Ліжко з білою постіллю і дерев'яним узголів'ям" loading="lazy">
+            <img class="photo" src="./images/rooms/double-new/1.jpg" alt="Двомісний номер з двоспальним ліжком" loading="lazy">
+            <img class="photo room__photo-alt" src="./images/rooms/double-new/2.jpg" alt="" loading="lazy">
           </div>
           <div class="room__body">
-            <h3>Двомісний New</h3>
-            <p class="room__meta">20 м² · 2 гостей · балкон</p>
+            <h3>Double New</h3>
+            <p class="room__desc">Двомісний номер у готелі</p>
+            <p class="room__meta">20 м² · 2 гостей · двоспальне ліжко</p>
             <p class="room__price">від — ₴ / ніч</p>
           </div>
         </article>
 
+        <!-- Номер: Twin New · фото: images/rooms/twin-new/ -->
         <article class="room">
           <div class="room__media">
-            <img class="photo" src="https://images.unsplash.com/photo-1786809611876-0f66ab8e1d6a?auto=format&fit=crop&w=1000&q=80" alt="Ліжко біля вікна з видом на ліс" loading="lazy">
+            <img class="photo" src="./images/rooms/twin-new/1.jpg" alt="Номер із двома окремими ліжками" loading="lazy">
+            <img class="photo room__photo-alt" src="./images/rooms/twin-new/2.jpg" alt="" loading="lazy">
           </div>
           <div class="room__body">
-            <h3>Сімейний номер</h3>
-            <p class="room__meta">43 м² · 2 кімнати</p>
+            <h3>Twin New</h3>
+            <p class="room__desc">Двомісний з окремими ліжками</p>
+            <p class="room__meta">20 м² · 2 гостей · 2 окремі ліжка</p>
             <p class="room__price">від — ₴ / ніч</p>
           </div>
         </article>
 
+        <!-- Номер: Double · фото: images/rooms/double/ -->
         <article class="room">
           <div class="room__media">
-            <img class="photo" src="https://images.unsplash.com/photo-1705372334341-3780ebb7c97b?auto=format&fit=crop&w=1000&q=80" alt="Ліжко з лампою біля дерев'яної стіни" loading="lazy">
+            <img class="photo" src="./images/rooms/double/1.jpg" alt="Двомісний номер з виходом на вулицю" loading="lazy">
+            <img class="photo room__photo-alt" src="./images/rooms/double/2.jpg" alt="" loading="lazy">
           </div>
           <div class="room__body">
-            <h3>Дуплекс</h3>
-            <p class="room__meta">45–50 м² · 4 гостей · 2 рівні</p>
+            <h3>Double</h3>
+            <p class="room__desc">Двомісний з окремим входом з вулиці</p>
+            <p class="room__meta">20 м² · 2 гостей · двоспальне або 2 окремі ліжка</p>
             <p class="room__price">від — ₴ / ніч</p>
           </div>
         </article>
 
+        <!-- Номер: Double Cottage · фото: images/rooms/double-cottage/ -->
         <article class="room">
           <div class="room__media">
-            <img class="photo" src="https://images.unsplash.com/photo-1670914131570-61ef0c05e388?auto=format&fit=crop&w=1000&q=80" alt="Піч у дерев'яному будиночку" loading="lazy">
+            <img class="photo" src="./images/rooms/double-cottage/1.jpg" alt="Дерев'яний двомісний номер у котеджі" loading="lazy">
+            <img class="photo room__photo-alt" src="./images/rooms/double-cottage/2.jpg" alt="" loading="lazy">
+          </div>
+          <div class="room__body">
+            <h3>Double Cottage</h3>
+            <p class="room__desc">Двомісний номер у котеджі</p>
+            <p class="room__meta">20 м² · 2 гостей · дерев'яний інтер'єр</p>
+            <p class="room__price">від — ₴ / ніч</p>
+          </div>
+        </article>
+
+        <!-- Номер: Triple New · фото: images/rooms/triple-new/ -->
+        <article class="room">
+          <div class="room__media">
+            <img class="photo" src="./images/rooms/triple-new/1.jpg" alt="Тримісний номер з балконом" loading="lazy">
+            <img class="photo room__photo-alt" src="./images/rooms/triple-new/2.jpg" alt="" loading="lazy">
+          </div>
+          <div class="room__body">
+            <h3>Triple New</h3>
+            <p class="room__desc">Тримісний номер з балконом</p>
+            <p class="room__meta">25 м² · 3 гостей · балкон</p>
+            <p class="room__price">від — ₴ / ніч</p>
+          </div>
+        </article>
+
+        <!-- Номер: Family Room · фото: images/rooms/family/ -->
+        <article class="room">
+          <div class="room__media">
+            <img class="photo" src="./images/rooms/family/1.jpg" alt="Сімейний номер із двох кімнат" loading="lazy">
+            <img class="photo room__photo-alt" src="./images/rooms/family/2.jpg" alt="" loading="lazy">
+          </div>
+          <div class="room__body">
+            <h3>Family Room</h3>
+            <p class="room__desc">Дві кімнати й балкон — для сім'ї</p>
+            <p class="room__meta">43 м² · 4 гостей · 2 кімнати</p>
+            <p class="room__price">від — ₴ / ніч</p>
+          </div>
+        </article>
+
+        <!-- Номер: Duplex · фото: images/rooms/duplex/ -->
+        <article class="room">
+          <div class="room__media">
+            <img class="photo" src="./images/rooms/duplex/1.jpg" alt="Дворівневий номер зі сходами" loading="lazy">
+            <img class="photo room__photo-alt" src="./images/rooms/duplex/2.jpg" alt="" loading="lazy">
+          </div>
+          <div class="room__body">
+            <h3>Duplex</h3>
+            <p class="room__desc">Дворівневий номер</p>
+            <p class="room__meta">45–50 м² · 4 гостей · 2 поверхи</p>
+            <p class="room__price">від — ₴ / ніч</p>
+          </div>
+        </article>
+
+        <!-- Номер: Quadruple · фото: images/rooms/quadruple/ -->
+        <article class="room">
+          <div class="room__media">
+            <img class="photo" src="./images/rooms/quadruple/1.jpg" alt="Чотиримісний номер із двома двоспальними ліжками" loading="lazy">
+            <img class="photo room__photo-alt" src="./images/rooms/quadruple/2.jpg" alt="" loading="lazy">
+          </div>
+          <div class="room__body">
+            <h3>Quadruple</h3>
+            <p class="room__desc">Однокімнатний чотиримісний</p>
+            <p class="room__meta">20 м² · 4 гостей · 2 двоспальні ліжка</p>
+            <p class="room__price">від — ₴ / ніч</p>
+          </div>
+        </article>
+
+        <!-- Номер: Люкс із каміном · фото: images/rooms/suite-fireplace/ -->
+        <article class="room">
+          <div class="room__media">
+            <img class="photo" src="./images/rooms/suite-fireplace/1.jpg" alt="Камін у люксі" loading="lazy">
+            <img class="photo room__photo-alt" src="./images/rooms/suite-fireplace/2.jpg" alt="" loading="lazy">
           </div>
           <div class="room__body">
             <h3>Люкс із каміном</h3>
-            <p class="room__meta">Котедж · 55 м² · 3 кімнати</p>
+            <p class="room__desc">Дві спальні й хол із каміном у котеджі</p>
+            <p class="room__meta">55 м² · 4 гостей · 3 кімнати</p>
             <p class="room__price">від — ₴ / ніч</p>
           </div>
         </article>
 
+        <!-- Номер: Мансардний · фото: images/rooms/attic/ -->
         <article class="room">
           <div class="room__media">
-            <img class="photo" src="https://images.unsplash.com/photo-1741948924635-13a7ddbc6a05?auto=format&fit=crop&w=1000&q=80" alt="Котедж зі світлом у вікнах серед засніженого лісу" loading="lazy">
+            <img class="photo" src="./images/rooms/attic/1.jpg" alt="Мансардний номер з дерев'яними стінами" loading="lazy">
+            <img class="photo room__photo-alt" src="./images/rooms/attic/2.jpg" alt="" loading="lazy">
+          </div>
+          <div class="room__body">
+            <h3>Мансардний</h3>
+            <p class="room__desc">Затишний номер під дахом котеджу</p>
+            <p class="room__meta">20 м² · 4 гостей · 2 двоспальні ліжка</p>
+            <p class="room__price">від — ₴ / ніч</p>
+          </div>
+        </article>
+
+        <!-- Номер: Котедж повністю · фото: images/rooms/cottage/ -->
+        <article class="room">
+          <div class="room__media">
+            <img class="photo" src="./images/rooms/cottage/1.jpg" alt="Кімната в котеджі" loading="lazy">
+            <img class="photo room__photo-alt" src="./images/rooms/cottage/2.jpg" alt="" loading="lazy">
           </div>
           <div class="room__body">
             <h3>Котедж повністю</h3>
-            <p class="room__meta">180 м² · 8 кімнат</p>
+            <p class="room__desc">Цілий котедж із кухнею та каміном</p>
+            <p class="room__meta">180 м² · до 20 гостей · 8 кімнат</p>
             <p class="room__price">від — ₴ / ніч</p>
           </div>
         </article>
@@ -364,11 +466,11 @@
 
         <!-- Фото: усі лежать стопкою, видно лише активне -->
         <div class="experiences__media reveal reveal--image">
-          <img class="photo photo--bottom is-active" data-exp-image="0" src="./images/Jacuzzi.jpeg" alt="Гість у джакузі на терасі з видом на гори" loading="lazy">
-          <img class="photo" data-exp-image="1" src="./images/sauna-room.jpg" alt="Дерев'яна сауна з теплим світлом" loading="lazy">
-          <img class="photo photo--bottom" data-exp-image="2" src="./images/Restourant.jpeg" alt="Святково накритий стіл у ресторані" loading="lazy">
-          <img class="photo" data-exp-image="3" src="./images/fireplace-evening.jpg" alt="Вечір із гітарою біля каміна" loading="lazy">
-          <img class="photo" data-exp-image="4" src="./images/Events/yoga.jpg" alt="Зал для практик і конференцій" loading="lazy">
+          <img class="photo photo--bottom is-active" data-exp-image="0" src="./images/rest/jacuzzi.jpg" alt="Гість у джакузі на терасі з видом на гори" loading="lazy">
+          <img class="photo" data-exp-image="1" src="./images/rest/sauna.jpg" alt="Дерев'яна сауна з теплим світлом" loading="lazy">
+          <img class="photo photo--bottom" data-exp-image="2" src="./images/rest/restaurant.jpg" alt="Святково накритий стіл у ресторані" loading="lazy">
+          <img class="photo" data-exp-image="3" src="./images/rest/fireplace-evening.jpg" alt="Вечір із гітарою біля каміна" loading="lazy">
+          <img class="photo" data-exp-image="4" src="./images/leisure/yoga.jpg" alt="Зал для практик і конференцій" loading="lazy">
         </div>
 
         <div class="experiences__content">
@@ -447,13 +549,13 @@
 
         <ol class="day__grid">
           <li class="moment reveal">
-            <div class="moment__media"><img class="photo" src="./images/Breakfast.jpeg" alt="Шведська лінія на сніданку" loading="lazy"></div>
+            <div class="moment__media"><img class="photo" src="./images/day/breakfast.jpg" alt="Шведська лінія на сніданку" loading="lazy"></div>
             <span class="moment__time">08:00</span>
             <h3>Ранок</h3>
             <p>Гарячий сніданок і туман над ялинами.</p>
           </li>
           <li class="moment reveal">
-            <div class="moment__media"><img class="photo" src="./images/ski-slopes.jpg" alt="Засніжені схили Буковеля в низьких хмарах" loading="lazy"></div>
+            <div class="moment__media"><img class="photo" src="./images/day/ski-slopes.jpg" alt="Засніжені схили Буковеля в низьких хмарах" loading="lazy"></div>
             <span class="moment__time">10:00</span>
             <h3>Схили</h3>
             <p>Кілька хвилин авто — і ви на трасах.</p>
@@ -531,7 +633,7 @@
           </article>
 
           <article class="offer reveal">
-            <div class="offer__media"><img class="photo" src="./images/Events/yoga.jpg" alt="Заняття йогою" loading="lazy"></div>
+            <div class="offer__media"><img class="photo" src="./images/leisure/yoga.jpg" alt="Заняття йогою" loading="lazy"></div>
             <span class="label">Дозвілля</span>
             <h3>Йога</h3>
             <p>Тричі на тиждень з 10:00 до 11:00 — заняття йогою, щоб знайти гармонію душі й тіла.</p>
