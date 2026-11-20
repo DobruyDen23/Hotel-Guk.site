@@ -47,7 +47,7 @@
   /* ---------- Сітка й відступи ---------- */
   --container: 1280px;                      /* макс. ширина контенту  */
   --gutter: clamp(20px, 5vw, 48px);          /* бокові поля            */
-  --section-space: clamp(72px, 10vw, 136px); /* відступ між секціями   */
+  --section-space: clamp(48px, 6vw, 88px);   /* відступ між секціями   */
   --gap: clamp(16px, 2vw, 24px);             /* проміжок у сітках      */
   --header-height: 76px;
 

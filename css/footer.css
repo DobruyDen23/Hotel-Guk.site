@@ -6,7 +6,7 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding-top: clamp(120px, 18vw, 220px);
+  padding-top: clamp(96px, 14vw, 170px);
   color: #fff;
   background: var(--color-dark);
 }
@@ -32,7 +32,7 @@
   display: grid;
   justify-items: center;
   gap: 24px;
-  margin-bottom: clamp(96px, 14vw, 180px);
+  margin-bottom: clamp(72px, 10vw, 136px);
   text-align: center;
 }
 
