@@ -112,7 +112,7 @@
   align-items: stretch;
   width: min(100%, 820px);
   padding: 8px;
-  border-radius: calc(var(--radius) + 4px);
+  border-radius: var(--radius-pill); /* панель-«пігулка», як і кнопка */
   background: var(--color-cream);
   color: var(--color-graphite);
   text-align: left;
@@ -153,6 +153,11 @@
   border-right: 0;
 }
 
+/* Перше поле відсунуте від округлого краю «пігулки» */
+.booking-bar__field:first-child {
+  padding-left: 28px;
+}
+
 /* У панелі кнопка завжди темна, навіть у темній темі */
 .booking-bar__submit {
   margin-left: 8px;
@@ -170,8 +175,12 @@
   .booking-bar {
     grid-template-columns: 1fr 1fr;
     gap: 4px;
+    border-radius: 28px; /* у два ряди «пігулка» не виглядає — м'які кути */
   }
-  .booking-bar__field {
+  .booking-bar__field,
+  .booking-bar__field:first-child {
+    min-width: 0; /* поля дат не розпирають панель за край екрана */
+    padding: 8px 14px;
     border-right: 0;
     border-bottom: 1px solid #dcdad4;
   }
@@ -180,6 +189,7 @@
   }
   .booking-bar__submit {
     grid-column: 1 / -1;
+    min-width: 0;
     margin: 4px 0 0;
   }
 }
@@ -296,7 +306,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--gap);
-  margin: clamp(72px, 10vw, 136px) 0 0;
+  margin: clamp(48px, 6vw, 88px) 0 0;
 }
 
 .stats__item {
