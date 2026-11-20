@@ -466,7 +466,7 @@
 
         <!-- Фото: усі лежать стопкою, видно лише активне -->
         <div class="experiences__media reveal reveal--image">
-          <img class="photo photo--bottom is-active" data-exp-image="0" src="./images/rest/jacuzzi.jpeg" alt="Гість у джакузі на терасі з видом на гори" loading="lazy">
+          <img class="photo photo--bottom is-active" data-exp-image="0" src="./images/rest/jacuzzi.jpg" alt="Гість у джакузі на терасі з видом на гори" loading="lazy">
           <img class="photo" data-exp-image="1" src="./images/rest/sauna.jpg" alt="Дерев'яна сауна з теплим світлом" loading="lazy">
           <img class="photo photo--bottom" data-exp-image="2" src="./images/rest/restaurant.jpg" alt="Святково накритий стіл у ресторані" loading="lazy">
           <img class="photo" data-exp-image="3" src="./images/rest/fireplace-evening.jpg" alt="Вечір із гітарою біля каміна" loading="lazy">
@@ -561,7 +561,7 @@
             <p>Кілька хвилин авто — і ви на трасах.</p>
           </li>
           <li class="moment reveal">
-            <div class="moment__media"><img class="photo" src="./images/day/HotTub.jpeg" alt="Дерев'яна купіль у лісі" loading="lazy"></div>
+            <div class="moment__media"><img class="photo" src="./images/day/hot-tub.jpg" alt="Дерев'яна купіль у лісі" loading="lazy"></div>
             <span class="moment__time">16:00</span>
             <h3>Тепло</h3>
             <p>Сауна і джакузі після холодного дня.</p>
@@ -616,7 +616,10 @@
 
         <div class="packages__grid">
           <article class="offer offer--big reveal">
-            <div class="offer__media"><img class="photo" src="./images/leisure/NewYear.MOV" alt="New year" loading="lazy"></div>
+            <div class="offer__media"><!-- Коротке відео грає як гіфка: без звуку, по колу, само.
+                 Файл: images/leisure/new-year.mp4, кадр-заставка — new-year-poster.jpg -->
+            <video class="photo" src="./images/leisure/new-year.mp4" poster="./images/leisure/new-year-poster.jpg"
+                   autoplay muted loop playsinline preload="metadata" aria-label="Новорічне святкування в GUK"></video></div>
             <div class="offer__body">
               <span class="label">Святкування</span>
               <h3>Незабутній Новий рік</h3>
@@ -626,14 +629,14 @@
           </article>
 
           <article class="offer reveal">
-            <div class="offer__media"><img class="photo" src="./images/leisure/MovieTime.jpeg" alt="Гори в тумані" loading="lazy"></div>
+            <div class="offer__media"><img class="photo" src="./images/leisure/movie-night.jpg" alt="Кіновечір у конференц-залі" loading="lazy"></div>
             <span class="label">Дозвілля</span>
             <h3>Кіновечір</h3>
             <p>Щовечора з 20:00 до 22:00 у конференц-залі — кіновечір.</p>
           </article>
 
           <article class="offer reveal">
-            <div class="offer__media"><img class="photo" src="./images/leisure/YogaSecond.jpeg" alt="Заняття йогою" loading="lazy"></div>
+            <div class="offer__media"><img class="photo" src="./images/leisure/yoga-2.jpg" alt="Заняття йогою" loading="lazy"></div>
             <span class="label">Дозвілля</span>
             <h3>Йога</h3>
             <p>Тричі на тиждень з 10:00 до 11:00 — заняття йогою, щоб знайти гармонію душі й тіла.</p>

@@ -534,6 +534,11 @@
   }
   /* Фото всередині обраного пункту (переносить js/main.js → пункт 8):
      на всю ширину пункту, під назвою й описом */
+  /* На телефоні опис згортається/розгортається миттєво: інакше
+     сторінка «пливе», поки попередній пункт плавно закривається */
+  .exp p {
+    transition: none;
+  }
   .exp > .experiences__media {
     grid-column: 1 / -1;
     margin-top: 4px;
@@ -704,10 +709,12 @@
   border-radius: var(--radius);
 }
 
-.offer__media img {
+.offer__media img,
+.offer__media video {
   transition: transform 1s var(--ease);
 }
-.offer:hover .offer__media img {
+.offer:hover .offer__media img,
+.offer:hover .offer__media video {
   transform: scale(1.05);
 }
 

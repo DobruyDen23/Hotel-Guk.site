@@ -48,11 +48,9 @@ T = {
     'Діти до 7 років — безкоштовно в пакетах': 'Children under 7 stay free on packages',
     'Групам від 20 осіб — окремі умови': 'Special terms for groups of 20+',
     '01 · Дім': '01 · The house',
-    "Дерев'яний дім, де ранок починається <em>з туману</em> за вікном.": 'A wooden house where mornings <em>begin with mist</em> at the window.',
     'Обрати номер': 'Choose a room',
     '<dt>до підйомника</dt>': '<dt>to the ski lift</dt>',
     '02 · Номери': '02 · Rooms',
-    'Номери, люкси <em>і котеджі</em>': 'Rooms, suites <em>&amp; cottages</em>',
     'Попередній номер': 'Previous room',
     'Наступний номер': 'Next room',
     'Номери — гортайте вбік': 'Rooms — scroll sideways',
@@ -81,8 +79,6 @@ T = {
     'Окреме приміщення для спорядження й одягу.': 'A separate room for gear and clothing.',
     '06 · Пропозиції': '06 · Offers',
     'Уточнити умови': 'Ask about terms',
-    'Купіль серед засніженого лісу': 'A hot tub in a snowy forest',
-    'Гори в тумані': 'Mountains in the mist',
     '07 · Як нас знайти': '07 · Getting here',
     'Поляниця, <em>урочище</em> Стаїще': 'Polianytsia, <em>Staishche</em> tract',
     '<dt>Адреса</dt>': '<dt>Address</dt>',
@@ -205,6 +201,10 @@ T = {
     'Цілий котедж із кухнею та каміном': 'The entire cottage, with a kitchen and fireplace',
     '180 м² · до 20 гостей · 8 кімнат': '180 m² · up to 20 guests · 8 rooms',
     'Кімната в котеджі': 'A room in the cottage',
+    'Місце спокою, де ранок починається <em>з туману</em> за вікном.': 'A place of calm, where mornings <em>begin with mist</em> at the window.',
+    'Номери <em>та котедж на велику компанію</em>': 'Rooms <em>and a cottage for a big group</em>',
+    'Кіновечір у конференц-залі': 'Movie night in the conference hall',
+    'Новорічне святкування в GUK': "New Year's celebration at GUK",
 }
 
 html = open(SRC, encoding="utf-8").read()
@@ -226,6 +226,9 @@ for src in sorted(T, key=len, reverse=True):
 # 3. Шляхи: сторінка лежить у папці en/
 html = html.replace('<html lang="uk">', '<html lang="en">')
 html = html.replace('href="css/', 'href="../css/').replace('src="js/', 'src="../js/')
+# Фото й відео лежать у корені сайту, а сторінка — у папці en/
+for attr in ("src", "poster"):
+    html = html.replace(f'{attr}="./images/', f'{attr}="../images/').replace(f'{attr}="images/', f'{attr}="../images/')
 html = html.replace('hreflang="uk" href="index.html"', 'hreflang="uk" href="../index.html"')
 html = html.replace('hreflang="en" href="en/index.html"', 'hreflang="en" href="index.html"')
 html = html.replace('<a href="index.html" aria-current="true" lang="uk">', '<a href="../index.html" lang="uk">')

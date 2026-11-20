@@ -10,6 +10,7 @@
    7. Номери: гортання стрілками й перетягуванням
    8. Відпочинок: перемикання фото
    9. Паралакс фото (data-parallax)
+   10. Відео-«гіфки»: пауза, якщо вимкнені анімації
    ========================================================= */
 
 // Позначка, що JS працює — тоді CSS ховає .reveal до появи
@@ -226,7 +227,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const before = active.getBoundingClientRect().top;
       active.appendChild(expMedia);
       const after = active.getBoundingClientRect().top;
-      if (after !== before) window.scrollBy(0, after - before);
+      // behavior "instant": інакше спрацьовує плавна прокрутка сайту
+      // і пункт ще секунду «пливе» по екрану
+      if (after !== before) window.scrollBy({ top: after - before, behavior: "instant" });
     } else if (!mobileQuery.matches && expMedia.parentElement !== expMediaHome) {
       expMediaHome.insertBefore(expMedia, expMediaNext);
     }
@@ -242,7 +245,11 @@ document.addEventListener("DOMContentLoaded", () => {
   mobileQuery.addEventListener("change", placeExpMedia);
 
   expItems.forEach((item) => {
-    item.addEventListener("mouseenter", () => showExperience(item.dataset.exp));
+    // Наведення — лише для миші. На телефоні дотик теж викликає
+    // «mouseenter», і пункт перемикався двічі — звідси було смикання.
+    item.addEventListener("pointerenter", (e) => {
+      if (e.pointerType === "mouse") showExperience(item.dataset.exp);
+    });
     item.addEventListener("click", () => showExperience(item.dataset.exp));
     item.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
@@ -251,6 +258,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+
+  /* ---------- 10. ВІДЕО-«ГІФКИ» ----------
+     Короткі відео (autoplay muted loop) грають як гіфки.
+     Якщо в системі вимкнені анімації — ставимо їх на паузу. */
+  if (reduceMotion) {
+    document.querySelectorAll("video[autoplay]").forEach((v) => {
+      v.removeAttribute("autoplay");
+      v.pause();
+    });
+  }
 
 
   /* ---------- 9. ПАРАЛАКС ----------
