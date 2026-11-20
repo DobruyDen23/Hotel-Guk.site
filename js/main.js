@@ -207,10 +207,39 @@ document.addEventListener("DOMContentLoaded", () => {
   const expItems = document.querySelectorAll("[data-exp]");
   const expImages = document.querySelectorAll("[data-exp-image]");
 
+  /* На телефоні (до 900px) блок з фото переїжджає ВСЕРЕДИНУ
+     обраного пункту — фото з'являється одразу під його назвою.
+     На комп'ютері фото повертається на своє місце поруч зі списком. */
+  const expMedia = document.querySelector(".experiences__media");
+  const expMediaHome = expMedia?.parentElement;    // де фото стоїть на комп'ютері
+  const expMediaNext = expMedia?.nextElementSibling;
+  const mobileQuery = window.matchMedia("(max-width: 900px)");
+
+  const placeExpMedia = () => {
+    if (!expMedia) return;
+    const active = document.querySelector("[data-exp].is-active");
+
+    if (mobileQuery.matches && active) {
+      if (expMedia.parentElement === active) return;
+      // Запам'ятовуємо положення пункту, щоб сторінка не «стрибнула»,
+      // коли фото зникає з пункту вище
+      const before = active.getBoundingClientRect().top;
+      active.appendChild(expMedia);
+      const after = active.getBoundingClientRect().top;
+      if (after !== before) window.scrollBy(0, after - before);
+    } else if (!mobileQuery.matches && expMedia.parentElement !== expMediaHome) {
+      expMediaHome.insertBefore(expMedia, expMediaNext);
+    }
+  };
+
   const showExperience = (id) => {
     expItems.forEach((item) => item.classList.toggle("is-active", item.dataset.exp === id));
     expImages.forEach((img) => img.classList.toggle("is-active", img.dataset.expImage === id));
+    placeExpMedia();
   };
+
+  placeExpMedia();
+  mobileQuery.addEventListener("change", placeExpMedia);
 
   expItems.forEach((item) => {
     item.addEventListener("mouseenter", () => showExperience(item.dataset.exp));

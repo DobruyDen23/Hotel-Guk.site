@@ -99,6 +99,13 @@ p {
   object-fit: cover;
 }
 
+/* Яку частину фото показувати, коли воно обрізається рамкою.
+   За замовчуванням — центр. Додайте клас до <img>:
+   .photo--bottom — нижня частина (стіл зі стравами, джакузі)
+   .photo--top    — верхня частина (небо, вершини гір)            */
+.photo--bottom { object-position: 50% 100%; }
+.photo--top    { object-position: 50% 0%; }
+
 /* ---------- Доступність ---------- */
 :focus-visible {
   outline: 2px solid var(--color-accent);
