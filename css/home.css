@@ -830,16 +830,24 @@
   color: var(--color-dark);
 }
 
-/* Стрічка — ті самі правила, що й у номерах */
+/* Лічильник «01 / 11» біля стрілок */
+.reviews__counter {
+  margin: 0 0 14px;
+  white-space: nowrap;
+  font-size: var(--fs-small);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em;
+  color: var(--color-on-dark-muted);
+}
+.reviews__counter span:first-child {
+  color: var(--color-on-dark);
+}
+
+/* Карусель: один слайд на всю ширину контейнера, гортається з «магнітом» */
 .reviews__track {
-  --edge: max(var(--gutter), calc((100vw - var(--container)) / 2));
   display: flex;
-  align-items: stretch;
-  gap: var(--gap);
-  padding-inline: var(--edge);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  scroll-padding-inline: var(--edge);
   scrollbar-width: none;
   cursor: grab;
 }
@@ -851,24 +859,52 @@
   scroll-snap-type: none;
   user-select: none;
 }
+.reviews__track.is-dragging img {
+  pointer-events: none;
+}
 
-/* Картка відгуку */
+/* Слайд: фото ліворуч, картка відгуку заходить на фото справа —
+   як у слайдах Instagram готелю */
 .review {
+  display: grid;
+  flex: 0 0 100%;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  align-items: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.review__photo {
+  grid-area: 1 / 1;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  border-radius: var(--radius-photo);
+}
+
+.review__card {
+  position: relative;
   display: flex;
-  flex: 0 0 clamp(290px, 32vw, 460px);
+  grid-area: 1 / 2;
   flex-direction: column;
-  gap: 24px;
-  margin: 0;
-  padding: clamp(24px, 2.6vw, 36px);
+  gap: 22px;
+  max-width: 580px;
+  margin: 0 0 0 calc(-1 * clamp(48px, 7vw, 112px)); /* наїжджає на фото */
+  padding: clamp(28px, 3vw, 44px);
   border: 1px solid var(--color-dark-line);
   border-radius: var(--radius-photo);
   background: var(--color-dark-surface);
-  scroll-snap-align: start;
-  transition: transform 0.5s var(--ease), border-color 0.5s var(--ease);
+  box-shadow: 0 30px 80px -30px rgb(0 0 0 / 0.6);
 }
-.review:hover {
-  transform: translateY(-4px);
-  border-color: var(--color-on-dark-muted);
+
+/* Поява картки, коли слайд став активним (клас ставить js/main.js → пункт 7) */
+.js .review__card {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+.js .review.is-active .review__card {
+  opacity: 1;
+  transform: none;
 }
 
 .review__stars {
@@ -879,11 +915,21 @@
 .review__star--off {
   opacity: 0.3;
 }
+/* Оцінка з Booking: «10/10» замість зірок */
+.review__stars--score {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  letter-spacing: 0;
+  line-height: 1;
+}
+.review__stars--score small {
+  font-size: 0.55em;
+  color: var(--color-on-dark-muted);
+}
 
 /* Великі лапки над текстом — «журнальний» акцент */
 .review__text {
   position: relative;
-  flex: 1;
   margin: 0;
   padding-top: 28px;
 }
@@ -901,7 +947,7 @@
 .review__text p {
   margin: 0;
   font-family: var(--font-serif);
-  font-size: clamp(1.05rem, 1.25vw, 1.2rem);
+  font-size: clamp(1.05rem, 1.4vw, 1.3rem);
   line-height: 1.55;
 }
 
@@ -936,16 +982,38 @@
   font-size: 1.15rem;
 }
 
-.reviews__more {
+/* Посилання на всі відгуки під каруселлю */
+.reviews__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 32px;
   margin-top: clamp(28px, 4vw, 44px);
+}
+.reviews__links a {
   color: var(--color-on-dark);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .review,
-  .review:hover {
-    transition: none;
+  .js .review__card {
+    opacity: 1;
     transform: none;
+    transition: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .review {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+  .review__photo {
+    aspect-ratio: 4 / 3;
+  }
+  /* На телефоні картка під фото й трохи заходить на нього знизу */
+  .review__card {
+    grid-area: 2 / 1;
+    max-width: none;
+    margin: -56px 14px 0;
   }
 }
 
@@ -954,15 +1022,21 @@
     flex-direction: column;
     align-items: flex-start;
   }
+  /* Оцінка — окремим рядком, нижче лічильник і стрілки */
   .reviews__aside {
+    flex-wrap: wrap;
+    align-items: center;
     width: 100%;
-    justify-content: space-between;
+    gap: 20px 16px;
+  }
+  .reviews__score {
+    flex-basis: 100%;
   }
   .reviews__score {
     text-align: left;
   }
-  .review {
-    flex-basis: 84vw;
+  .reviews__counter {
+    margin: 0 auto 14px 0;
   }
 }
 
