@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ---------- 7. СТРІЧКИ НОМЕРІВ І ВІДГУКІВ: СТРІЛКИ + ПЕРЕТЯГУВАННЯ ----------
      Одна функція для обох стрічок. name = "rooms" або "reviews":
      у HTML це атрибути data-<name>-track, data-<name>-prev, data-<name>-next. */
-  const initTrack = (name, cardSelector) => {
+  const initTrack = (name, cardSelector, withButtons = true) => {
     const track = document.querySelector(`[data-${name}-track]`);
     if (!track) return;
 
@@ -172,12 +172,14 @@ document.addEventListener("DOMContentLoaded", () => {
       return card ? card.offsetWidth + parseFloat(getComputedStyle(track).gap || 0) : 400;
     };
 
-    document.querySelector(`[data-${name}-prev]`)?.addEventListener("click", () => {
-      track.scrollBy({ left: -step(), behavior: "smooth" });
-    });
-    document.querySelector(`[data-${name}-next]`)?.addEventListener("click", () => {
-      track.scrollBy({ left: step(), behavior: "smooth" });
-    });
+    if (withButtons) {
+      document.querySelector(`[data-${name}-prev]`)?.addEventListener("click", () => {
+        track.scrollBy({ left: -step(), behavior: "smooth" });
+      });
+      document.querySelector(`[data-${name}-next]`)?.addEventListener("click", () => {
+        track.scrollBy({ left: step(), behavior: "smooth" });
+      });
+    }
 
     // Перетягування мишею (на телефоні працює звичайний свайп)
     let isDown = false;
@@ -205,7 +207,78 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   initTrack("rooms", ".room");
-  initTrack("reviews", ".review");
+  // У відгуках стрілки керує карусель нижче (з переходом з останнього на перший)
+  initTrack("reviews", ".review", false);
+
+
+  /* ---------- 7б. КАРУСЕЛЬ ВІДГУКІВ ----------
+     Один слайд на екран. Сама гортає кожні 7 секунд, але зупиняється,
+     коли гість наводить мишу, торкається, гортає сам або блок не на екрані.
+     При prefers-reduced-motion — без автогортання. */
+  const reviewsTrack = document.querySelector("[data-reviews-track]");
+
+  if (reviewsTrack) {
+    const slides = [...reviewsTrack.querySelectorAll(".review")];
+    const current = document.querySelector("[data-reviews-current]");
+    const total = document.querySelector("[data-reviews-total]");
+    const pad = (n) => String(n).padStart(2, "0");
+    let index = 0;
+
+    if (total) total.textContent = pad(slides.length);
+
+    const goTo = (i) => {
+      const wrap = i < 0 || i >= slides.length; // з останнього — на перший і навпаки
+      index = (i + slides.length) % slides.length;
+      // Сусідній слайд — плавно; перехід через усю стрічку — миттєво,
+      // щоб фото не «перемотувались» (картка все одно з'являється плавно)
+      reviewsTrack.scrollTo({
+        left: slides[index].offsetLeft - slides[0].offsetLeft,
+        behavior: wrap ? "instant" : "smooth",
+      });
+    };
+
+    // Який слайд зараз видно: лічильник + поява картки
+    const markActive = () => {
+      index = Math.round(reviewsTrack.scrollLeft / reviewsTrack.clientWidth);
+      slides.forEach((s, i) => s.classList.toggle("is-active", i === index));
+      if (current) current.textContent = pad(index + 1);
+    };
+    let scrollTimer;
+    reviewsTrack.addEventListener("scroll", () => {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(markActive, 80);
+    });
+    markActive();
+
+    document.querySelector("[data-reviews-prev]")?.addEventListener("click", () => goTo(index - 1));
+    document.querySelector("[data-reviews-next]")?.addEventListener("click", () => goTo(index + 1));
+
+    // Стрілки клавіатури, коли стрічка у фокусі
+    reviewsTrack.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") { e.preventDefault(); goTo(index + 1); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); goTo(index - 1); }
+    });
+
+    // Автогортання
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let paused = false;
+    let visible = false;
+    const section = reviewsTrack.closest(".reviews");
+
+    ["pointerenter", "focusin", "touchstart"].forEach((ev) =>
+      section.addEventListener(ev, () => { paused = true; }, { passive: true }));
+    ["pointerleave", "focusout"].forEach((ev) =>
+      section.addEventListener(ev, () => { paused = false; }));
+
+    new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; }, { threshold: 0.4 })
+      .observe(reviewsTrack);
+
+    if (!reduceMotion) {
+      setInterval(() => {
+        if (!paused && visible && !document.hidden) goTo(index + 1);
+      }, 7000);
+    }
+  }
 
 
   /* ---------- 8. ВІДПОЧИНОК: ПЕРЕМИКАННЯ ФОТО ----------
