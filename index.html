@@ -110,6 +110,7 @@
       <li><a href="#rooms">Номери</a></li>
       <li><a href="#experiences">Відпочинок</a></li>
       <li><a href="#packages">Події</a></li>
+      <li><a href="#reviews">Відгуки</a></li>
       <li><a href="#location">Контакти</a></li>
     </ul>
     <div class="menu__footer">
@@ -307,7 +308,7 @@
             <h3>Double New</h3>
             <p class="room__desc">Двомісний номер у готелі</p>
             <p class="room__meta">20 м² · 2 гостей · двоспальне ліжко</p>
-            <p class="room__price">від — 3000 ₴ / ніч</p>
+            <p class="room__price">від 3 000 ₴ / ніч</p>
           </div>
         </article>
 
@@ -321,7 +322,7 @@
             <h3>Twin New</h3>
             <p class="room__desc">Двомісний з окремими ліжками</p>
             <p class="room__meta">20 м² · 2 гостей · 2 окремі ліжка</p>
-            <p class="room__price">від — 3200 ₴ / ніч</p>
+            <p class="room__price">від 3 200 ₴ / ніч</p>
           </div>
         </article>
 
@@ -335,7 +336,7 @@
             <h3>Double</h3>
             <p class="room__desc">Двомісний з окремим входом з вулиці</p>
             <p class="room__meta">20 м² · 2 гостей · двоспальне або 2 окремі ліжка</p>
-            <p class="room__price">від — 3100 ₴ / ніч</p>
+            <p class="room__price">від 3 100 ₴ / ніч</p>
           </div>
         </article>
 
@@ -349,7 +350,7 @@
             <h3>Double Cottage</h3>
             <p class="room__desc">Двомісний номер у котеджі</p>
             <p class="room__meta">20 м² · 2 гостей · дерев'яний інтер'єр</p>
-            <p class="room__price">від — 3100 ₴ / ніч</p>
+            <p class="room__price">від 3 100 ₴ / ніч</p>
           </div>
         </article>
 
@@ -363,7 +364,7 @@
             <h3>Triple New</h3>
             <p class="room__desc">Тримісний номер з балконом</p>
             <p class="room__meta">25 м² · 3 гостей · балкон</p>
-            <p class="room__price">від — 4100 ₴ / ніч</p>
+            <p class="room__price">від 4 100 ₴ / ніч</p>
           </div>
         </article>
 
@@ -377,7 +378,7 @@
             <h3>Family Room</h3>
             <p class="room__desc">Дві кімнати й балкон — для сім'ї</p>
             <p class="room__meta">43 м² · 4 гостей · 2 кімнати</p>
-            <p class="room__price">від — 4500 ₴ / ніч</p>
+            <p class="room__price">від 4 500 ₴ / ніч</p>
           </div>
         </article>
 
@@ -391,7 +392,7 @@
             <h3>Duplex</h3>
             <p class="room__desc">Дворівневий номер</p>
             <p class="room__meta">45–50 м² · 4 гостей · 2 поверхи</p>
-            <p class="room__price">від — 4500 ₴ / ніч</p>
+            <p class="room__price">від 4 500 ₴ / ніч</p>
           </div>
         </article>
 
@@ -405,7 +406,7 @@
             <h3>Quadruple</h3>
             <p class="room__desc">Однокімнатний чотиримісний</p>
             <p class="room__meta">20 м² · 4 гостей · 2 двоспальні ліжка</p>
-            <p class="room__price">від — 4200 ₴ / ніч</p>
+            <p class="room__price">від 4 200 ₴ / ніч</p>
           </div>
         </article>
 
@@ -419,7 +420,7 @@
             <h3>Люкс із каміном</h3>
             <p class="room__desc">Дві спальні й хол із каміном у котеджі</p>
             <p class="room__meta">55 м² · 4 гостей · 3 кімнати</p>
-            <p class="room__price">від — 6000 ₴ / ніч</p>
+            <p class="room__price">від 6 000 ₴ / ніч</p>
           </div>
         </article>
 
@@ -433,7 +434,7 @@
             <h3>Мансардний</h3>
             <p class="room__desc">Затишний номер під дахом котеджу</p>
             <p class="room__meta">20 м² · 4 гостей · 2 двоспальні ліжка</p>
-            <p class="room__price">від — 4000 ₴ / ніч</p>
+            <p class="room__price">від 4 000 ₴ / ніч</p>
           </div>
         </article>
 
@@ -447,7 +448,7 @@
             <h3>Котедж повністю</h3>
             <p class="room__desc">Цілий котедж із кухнею та каміном</p>
             <p class="room__meta">180 м² · до 20 гостей · 8 кімнат</p>
-            <p class="room__price">від — 25000 ₴ / ніч</p>
+            <p class="room__price">від 25 000 ₴ / ніч</p>
           </div>
         </article>
 
@@ -647,13 +648,157 @@
 
 
     <!-- =====================================================
-         10. ВІДГУКИ — шаблон (вимкнений до реальних відгуків)
+         10. ВІДГУКИ — справжні відгуки гостей з Google Maps
+         Стилі: css/home.css → «10. ВІДГУКИ»
+         Гортання стрілками й перетягуванням: js/main.js → пункт 7
+         Новий відгук = скопіювати один <figure class="review"> і
+         додати переклад тексту в tools/make_en.py (словник T).
          ===================================================== -->
-    <!--
-    <section class="reviews section section--alt">
-      ...
+    <section class="reviews section" id="reviews">
+      <div class="container">
+        <div class="section-head reviews__head">
+          <div>
+            <span class="label reveal">07 · Відгуки</span>
+            <h2 class="reveal">Гості скажуть <em>краще</em> за нас</h2>
+          </div>
+          <div class="reviews__aside reveal">
+            <p class="reviews__score"><strong>9,1</strong><span>рейтинг на Booking.com</span></p>
+            <div class="rooms__nav">
+              <button class="round-btn" type="button" data-reviews-prev aria-label="Попередній відгук">←</button>
+              <button class="round-btn" type="button" data-reviews-next aria-label="Наступний відгук">→</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reviews__track" data-reviews-track tabindex="0" aria-label="Відгуки — гортайте вбік">
+        <!-- Відгук 01: Margarita -->
+        <figure class="review">
+          <p class="review__stars" aria-label="Оцінка 5 з 5">★★★★★</p>
+          <blockquote class="review__text">
+            <p>Не вперше, і знову задоволені. Чудовий вид із вікон номера, тиша й сімейна атмосфера. Відпочивали і взимку, і восени — у номерах завжди тепло. Сніданки ситні, а млинці з вишнями та маком — то любов. Обов'язково завітаємо ще!</p>
+          </blockquote>
+          <figcaption class="review__author">
+            <span class="review__avatar" aria-hidden="true">M</span>
+            <span><strong>Margarita</strong><small>Google · з друзями</small></span>
+          </figcaption>
+        </figure>
+        <!-- Відгук 02: Kissslorod -->
+        <figure class="review">
+          <p class="review__stars" aria-label="Оцінка 5 з 5">★★★★★</p>
+          <blockquote class="review__text">
+            <p>Дуже затишне місце. Гарний, але ненав'язливий сервіс, смачна домашня кухня, і можна поспілкуватися з шеф-кухарем особисто. Чан, сауна, джакузі — усе прямо при готелі. У цього місця є душа.</p>
+          </blockquote>
+          <figcaption class="review__author">
+            <span class="review__avatar" aria-hidden="true">K</span>
+            <span><strong>Kissslorod</strong><small>Google · з друзями</small></span>
+          </figcaption>
+        </figure>
+        <!-- Відгук 03: Оксана С. -->
+        <figure class="review">
+          <p class="review__stars" aria-label="Оцінка 5 з 5">★★★★★</p>
+          <blockquote class="review__text">
+            <p>Нас без проблем заселили раніше й завжди йшли назустріч. Було відчуття справжньої турботи про гостей. Сніданки — окрема любов! Атмосфера чудова, а ставлення до гостей і домашніх улюбленців просто прекрасне.</p>
+          </blockquote>
+          <figcaption class="review__author">
+            <span class="review__avatar" aria-hidden="true">О</span>
+            <span><strong>Оксана С.</strong><small>Google · із сім'єю</small></span>
+          </figcaption>
+        </figure>
+        <!-- Відгук 04: Aleksa W. -->
+        <figure class="review">
+          <p class="review__stars" aria-label="Оцінка 5 з 5">★★★★★</p>
+          <blockquote class="review__text">
+            <p>Ресторан із панорамним видом на гори, дуже затишно. Персонал привітний і турботливий — відчула себе як удома. А кухня — клас: борщ найкращий у всьому Буковелі!</p>
+          </blockquote>
+          <figcaption class="review__author">
+            <span class="review__avatar" aria-hidden="true">A</span>
+            <span><strong>Aleksa W.</strong><small>Google · ресторан</small></span>
+          </figcaption>
+        </figure>
+        <!-- Відгук 05: Lone Frod -->
+        <figure class="review">
+          <p class="review__stars" aria-label="Оцінка 4 з 5">★★★★<span class="review__star--off">★</span></p>
+          <blockquote class="review__text">
+            <p>Через три дні відпочинку знали весь персонал на ім'я — і в результаті найвищий бал! Особливо сподобалося, що в номері був камін і нам дозволили його розпалювати: це +100 до затишку.</p>
+          </blockquote>
+          <figcaption class="review__author">
+            <span class="review__avatar" aria-hidden="true">L</span>
+            <span><strong>Lone Frod</strong><small>Google</small></span>
+          </figcaption>
+        </figure>
+        <!-- Відгук 06: Julia S. -->
+        <figure class="review">
+          <p class="review__stars" aria-label="Оцінка 5 з 5">★★★★★</p>
+          <blockquote class="review__text">
+            <p>Дуже привітний персонал. У номерах чисто, прибирання щодня, є все необхідне. Комфортні матраци й тепла ковдра. Є зал для практик і кіно на проєкторі. Дуже класне джакузі та гаряча лазня.</p>
+          </blockquote>
+          <figcaption class="review__author">
+            <span class="review__avatar" aria-hidden="true">J</span>
+            <span><strong>Julia S.</strong><small>Google · з друзями</small></span>
+          </figcaption>
+        </figure>
+        <!-- Відгук 07: Юлія Д. -->
+        <figure class="review">
+          <p class="review__stars" aria-label="Оцінка 5 з 5">★★★★★</p>
+          <blockquote class="review__text">
+            <p>Чудовий готель для тихого сімейного відпочинку. Доброзичливі люди й сервіс на високому рівні: якщо треба перенести заселення чи виселення — завжди йдуть назустріч. Тихий мальовничий куточок, а до центру Буковеля — невеличка прогулянка пішки.</p>
+          </blockquote>
+          <figcaption class="review__author">
+            <span class="review__avatar" aria-hidden="true">Ю</span>
+            <span><strong>Юлія Д.</strong><small>Google · із сім'єю</small></span>
+          </figcaption>
+        </figure>
+        <!-- Відгук 08: Руслан П. -->
+        <figure class="review">
+          <p class="review__stars" aria-label="Оцінка 5 з 5">★★★★★</p>
+          <blockquote class="review__text">
+            <p>Приємна атмосфера, доброзичливий персонал і власники. Відпочили на повну завдяки джакузі, спа й чану. Їжа смачна — обов'язково спробуйте узвар, він повертає в дитинство. Обов'язково приїду ще!</p>
+          </blockquote>
+          <figcaption class="review__author">
+            <span class="review__avatar" aria-hidden="true">Р</span>
+            <span><strong>Руслан П.</strong><small>Google · у парі</small></span>
+          </figcaption>
+        </figure>
+        <!-- Відгук 09: Nataly A. -->
+        <figure class="review">
+          <p class="review__stars" aria-label="Оцінка 5 з 5">★★★★★</p>
+          <blockquote class="review__text">
+            <p>10 днів відпочивала в цьому готелі. Дуже класне розташування: поруч магазини й кафе, швидко дістатися до популярних місць Буковеля. З номера — чудовий краєвид. Персонал уважний, завжди допоможуть.</p>
+          </blockquote>
+          <figcaption class="review__author">
+            <span class="review__avatar" aria-hidden="true">N</span>
+            <span><strong>Nataly A.</strong><small>Google · з друзями</small></span>
+          </figcaption>
+        </figure>
+        <!-- Відгук 10: Богдана -->
+        <figure class="review">
+          <p class="review__stars" aria-label="Оцінка 5 з 5">★★★★★</p>
+          <blockquote class="review__text">
+            <p>Дуже затишно й атмосферно. Особливо сподобалося джакузі. У номері чисто, дуже зручне ліжко й красивий вид на одиноку смереку на горі. Персонал приємний, кухня смачна. Однозначно 10/10 :)</p>
+          </blockquote>
+          <figcaption class="review__author">
+            <span class="review__avatar" aria-hidden="true">Б</span>
+            <span><strong>Богдана</strong><small>Google · із сім'єю</small></span>
+          </figcaption>
+        </figure>
+        <!-- Відгук 11: Дарья M. -->
+        <figure class="review">
+          <p class="review__stars" aria-label="Оцінка 5 з 5">★★★★★</p>
+          <blockquote class="review__text">
+            <p>Дуже атмосферний ресторан із цікавою історією та неймовірно смачною домашньою кухнею. Дякуємо дівчатам за турботливе обслуговування!</p>
+          </blockquote>
+          <figcaption class="review__author">
+            <span class="review__avatar" aria-hidden="true">Д</span>
+            <span><strong>Дарья M.</strong><small>Google · ресторан</small></span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="container">
+        <a class="link-arrow reviews__more reveal" href="https://www.google.com/maps/search/?api=1&query=%D0%93%D0%BE%D1%82%D0%B5%D0%BB%D1%8C+%D0%93%D1%83%D0%BA+%D0%9F%D0%BE%D0%BB%D1%8F%D0%BD%D0%B8%D1%86%D1%8F" target="_blank" rel="noopener">Усі відгуки в Google</a>
+      </div>
     </section>
-    -->
 
 
     <!-- =====================================================
@@ -665,7 +810,7 @@
       <div class="container location__grid">
 
         <div class="location__text">
-          <span class="label reveal">07 · Як нас знайти</span>
+          <span class="label reveal">08 · Як нас знайти</span>
           <h2 class="reveal">Поляниця, <em>урочище</em> Стаїще</h2>
 
           <dl class="location__list reveal">
@@ -697,7 +842,7 @@
     <section class="faq section">
       <div class="container faq__grid">
         <div>
-          <span class="label reveal">08 · Перед поїздкою</span>
+          <span class="label reveal">09 · Перед поїздкою</span>
           <h2 class="reveal">Часті <em>питання</em></h2>
         </div>
         <div class="faq__list reveal">

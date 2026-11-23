@@ -7,7 +7,7 @@
    4. Перемикач теми: світла / темна
    5. Анімації появи при прокрутці (.reveal)
    6. Панель бронювання в hero
-   7. Номери: гортання стрілками й перетягуванням
+   7. Номери й відгуки: гортання стрілками й перетягуванням
    8. Відпочинок: перемикання фото
    9. Паралакс фото (data-parallax)
    10. Відео-«гіфки»: пауза, якщо вимкнені анімації
@@ -159,20 +159,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* ---------- 7. НОМЕРИ: СТРІЛКИ + ПЕРЕТЯГУВАННЯ ---------- */
-  const track = document.querySelector("[data-rooms-track]");
+  /* ---------- 7. СТРІЧКИ НОМЕРІВ І ВІДГУКІВ: СТРІЛКИ + ПЕРЕТЯГУВАННЯ ----------
+     Одна функція для обох стрічок. name = "rooms" або "reviews":
+     у HTML це атрибути data-<name>-track, data-<name>-prev, data-<name>-next. */
+  const initTrack = (name, cardSelector) => {
+    const track = document.querySelector(`[data-${name}-track]`);
+    if (!track) return;
 
-  if (track) {
     // Крок гортання = ширина однієї картки + проміжок
     const step = () => {
-      const card = track.querySelector(".room");
+      const card = track.querySelector(cardSelector);
       return card ? card.offsetWidth + parseFloat(getComputedStyle(track).gap || 0) : 400;
     };
 
-    document.querySelector("[data-rooms-prev]")?.addEventListener("click", () => {
+    document.querySelector(`[data-${name}-prev]`)?.addEventListener("click", () => {
       track.scrollBy({ left: -step(), behavior: "smooth" });
     });
-    document.querySelector("[data-rooms-next]")?.addEventListener("click", () => {
+    document.querySelector(`[data-${name}-next]`)?.addEventListener("click", () => {
       track.scrollBy({ left: step(), behavior: "smooth" });
     });
 
@@ -199,7 +202,10 @@ document.addEventListener("DOMContentLoaded", () => {
       isDown = false;
       track.classList.remove("is-dragging");
     });
-  }
+  };
+
+  initTrack("rooms", ".room");
+  initTrack("reviews", ".review");
 
 
   /* ---------- 8. ВІДПОЧИНОК: ПЕРЕМИКАННЯ ФОТО ----------

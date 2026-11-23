@@ -17,6 +17,8 @@
   --color-dark: #1f2224;        /* темні секції (сезони, футер, меню) */
   --color-dark-line: #34383b;   /* лінії на темних секціях            */
   --color-on-dark: #f2f1ed;     /* текст на темному фоні              */
+  --color-on-dark-muted: #a2a6a8; /* другорядний текст на темному    */
+  --color-dark-surface: #282b2e;  /* картки на темних секціях (відгуки) */
   --color-accent: #1f2224;      /* акцент (номери, мітки) — графіт    */
 
   /* Фіксовані кольори — НЕ змінюються в темній темі.
@@ -83,6 +85,8 @@
   --color-dark: #101213;        /* «темні» секції — ще темніші        */
   --color-dark-line: #2a2e30;
   --color-on-dark: #f2f1ed;
+  --color-on-dark-muted: #8f9497;
+  --color-dark-surface: #191c1d;
   --color-accent: #f2f1ed;
 
   --header-bg: rgb(23 25 26 / 0.92);
