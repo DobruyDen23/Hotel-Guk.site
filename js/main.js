@@ -219,12 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (reviewsTrack) {
     const slides = [...reviewsTrack.querySelectorAll(".review")];
-    const current = document.querySelector("[data-reviews-current]");
-    const total = document.querySelector("[data-reviews-total]");
-    const pad = (n) => String(n).padStart(2, "0");
     let index = 0;
-
-    if (total) total.textContent = pad(slides.length);
 
     const goTo = (i) => {
       const wrap = i < 0 || i >= slides.length; // з останнього — на перший і навпаки
@@ -237,11 +232,10 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     };
 
-    // Який слайд зараз видно: лічильник + поява картки
+    // Який слайд зараз видно: поява картки
     const markActive = () => {
       index = Math.round(reviewsTrack.scrollLeft / reviewsTrack.clientWidth);
       slides.forEach((s, i) => s.classList.toggle("is-active", i === index));
-      if (current) current.textContent = pad(index + 1);
     };
     let scrollTimer;
     reviewsTrack.addEventListener("scroll", () => {
