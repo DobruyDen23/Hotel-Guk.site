@@ -5,9 +5,9 @@
    01. HERO              07. ДЕНЬ У ГУКУ
    02. БІГУЧИЙ РЯДОК     08. ЩО ВХОДИТЬ
    03. ДІМ               09. ПРОПОЗИЦІЇ
-   04. НОМЕРИ            11. РОЗТАШУВАННЯ
-   05. ВІДПОЧИНОК        12. ПИТАННЯ
-   06. ПАНОРАМА
+   04. НОМЕРИ            10. ВІДГУКИ
+   05. ВІДПОЧИНОК        11. РОЗТАШУВАННЯ
+   06. ПАНОРАМА          12. ПИТАННЯ
    (13. ФУТЕР — у footer.css)
    Адаптивні правила — в кінці кожного блоку.
    ========================================================= */
@@ -774,6 +774,195 @@
 @media (max-width: 600px) {
   .packages__grid {
     grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   10. ВІДГУКИ — темна секція, стрічка карток як у «Номерах»
+   ========================================================= */
+
+.reviews {
+  background: var(--color-dark);
+  color: var(--color-on-dark);
+}
+
+.reviews .label {
+  color: var(--color-on-dark-muted);
+}
+
+.reviews__head {
+  align-items: flex-end;
+}
+
+/* Праворуч у заголовку: велика оцінка + стрілки */
+.reviews__aside {
+  display: flex;
+  align-items: flex-end;
+  gap: clamp(24px, 4vw, 56px);
+}
+
+.reviews__score {
+  display: grid;
+  margin: 0;
+  text-align: right;
+}
+.reviews__score strong {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 400;
+  line-height: 0.9;
+}
+.reviews__score span {
+  margin-top: 8px;
+  font-size: var(--fs-small);
+  color: var(--color-on-dark-muted);
+}
+
+/* Кнопки-стрілки на темному фоні */
+.reviews .round-btn {
+  border-color: var(--color-dark-line);
+  color: var(--color-on-dark);
+}
+.reviews .round-btn:hover {
+  background: var(--color-on-dark);
+  border-color: var(--color-on-dark);
+  color: var(--color-dark);
+}
+
+/* Стрічка — ті самі правила, що й у номерах */
+.reviews__track {
+  --edge: max(var(--gutter), calc((100vw - var(--container)) / 2));
+  display: flex;
+  align-items: stretch;
+  gap: var(--gap);
+  padding-inline: var(--edge);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--edge);
+  scrollbar-width: none;
+  cursor: grab;
+}
+.reviews__track::-webkit-scrollbar {
+  display: none;
+}
+.reviews__track.is-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+  user-select: none;
+}
+
+/* Картка відгуку */
+.review {
+  display: flex;
+  flex: 0 0 clamp(290px, 32vw, 460px);
+  flex-direction: column;
+  gap: 24px;
+  margin: 0;
+  padding: clamp(24px, 2.6vw, 36px);
+  border: 1px solid var(--color-dark-line);
+  border-radius: var(--radius-photo);
+  background: var(--color-dark-surface);
+  scroll-snap-align: start;
+  transition: transform 0.5s var(--ease), border-color 0.5s var(--ease);
+}
+.review:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-on-dark-muted);
+}
+
+.review__stars {
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.2em;
+}
+.review__star--off {
+  opacity: 0.3;
+}
+
+/* Великі лапки над текстом — «журнальний» акцент */
+.review__text {
+  position: relative;
+  flex: 1;
+  margin: 0;
+  padding-top: 28px;
+}
+.review__text::before {
+  content: "“";
+  position: absolute;
+  top: -18px;
+  left: -4px;
+  font-family: var(--font-serif);
+  font-size: 4.5rem;
+  line-height: 1;
+  color: var(--color-on-dark-muted);
+  opacity: 0.5;
+}
+.review__text p {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.05rem, 1.25vw, 1.2rem);
+  line-height: 1.55;
+}
+
+.review__author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-dark-line);
+}
+.review__author strong {
+  display: block;
+  font-weight: 500;
+}
+.review__author small {
+  display: block;
+  font-size: var(--fs-small);
+  color: var(--color-on-dark-muted);
+}
+
+/* Кружечок з першою літерою імені */
+.review__avatar {
+  display: grid;
+  flex: 0 0 44px;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-on-dark);
+  color: var(--color-dark);
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+}
+
+.reviews__more {
+  margin-top: clamp(28px, 4vw, 44px);
+  color: var(--color-on-dark);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .review,
+  .review:hover {
+    transition: none;
+    transform: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .reviews__head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .reviews__aside {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .reviews__score {
+    text-align: left;
+  }
+  .review {
+    flex-basis: 84vw;
   }
 }
 

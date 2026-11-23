@@ -54,7 +54,6 @@ T = {
     'Попередній номер': 'Previous room',
     'Наступний номер': 'Next room',
     'Номери — гортайте вбік': 'Rooms — scroll sideways',
-    'від — ₴ / ніч': 'from — ₴ / night',
     '03 · Відпочинок': '03 · Unwind',
     'Дні, що минають <em>у гірському</em> темпі': 'Days that run <em>on mountain</em> time',
     'Басейн і джакузі': 'Pool &amp; jacuzzi',
@@ -72,14 +71,13 @@ T = {
     'Сауна і джакузі після холодного дня.': 'Sauna and jacuzzi after a cold day.',
     "Кам'яний будинок і дерев'яна купіль увечері": 'A stone house and wooden hot tub in the evening',
     '<h3>Вечір</h3>': '<h3>Evening</h3>',
-    'Вечеря, вогонь і тиша гір.': 'Dinner, the fire and the quiet of the mountains.',
     '05 · Для кожного гостя': '05 · For every guest',
     '<h3>Парковка</h3>': '<h3>Parking</h3>',
     'Сушарка для лиж': 'Ski drying room',
     'Окреме приміщення для спорядження й одягу.': 'A separate room for gear and clothing.',
     '06 · Пропозиції': '06 · Offers',
     'Уточнити умови': 'Ask about terms',
-    '07 · Як нас знайти': '07 · Getting here',
+    '08 · Як нас знайти': '08 · Getting here',
     'Поляниця, <em>урочище</em> Стаїще': 'Polianytsia, <em>Staishche</em> tract',
     '<dt>Адреса</dt>': '<dt>Address</dt>',
     'урочище Стаїще, 265, с. Поляниця': '265 Staishche tract, Polianytsia village',
@@ -88,7 +86,7 @@ T = {
     '<dt>Пошта</dt>': '<dt>Email</dt>',
     'Прокласти маршрут': 'Get directions',
     'Готель GUK на карті': 'Hotel GUK on the map',
-    '08 · Перед поїздкою': '08 · Before you travel',
+    '09 · Перед поїздкою': '09 · Before you travel',
     'Часті <em>питання</em>': 'Frequently asked <em>questions</em>',
     'Чи можна з домашніми тваринами?': 'Can I bring my pet?',
     'Так, за попередньою домовленістю. Напишіть або зателефонуйте нам перед бронюванням.': 'Yes, by prior arrangement. Please message or call us before booking.',
@@ -155,7 +153,6 @@ T = {
     'При бронюванні потрібно внести передоплату 30% від суми. Якщо ви скасовуєте бронювання не пізніше ніж за 21 день до заїзду, передоплату повертаємо в повному обсязі. Решту — при заїзді.': 'A 30% deposit is required when booking. If you cancel at least 21 days before arrival, we refund the deposit in full. The balance is paid on arrival.',
     'Так, за запитом.': 'Yes, on request.',
     'Чи працює басейн узимку?': 'Is the pool open in winter?',
-    'На жаль, узимку басейн не працює.': 'Unfortunately, the pool is closed in winter.',
     'с. Поляниця, урочище Стаїще, 265': '265 Staishche tract, Polianytsia',
     '>Про нас<': '>About<',
     '>Події<': '>Events<',
@@ -205,6 +202,45 @@ T = {
     'Номери <em>та котедж на велику компанію</em>': 'Rooms <em>and a cottage for a big group</em>',
     'Кіновечір у конференц-залі': 'Movie night in the conference hall',
     'Новорічне святкування в GUK': "New Year's celebration at GUK",
+    # ---------- 10. Відгуки ----------
+    '07 · Відгуки': '07 · Reviews',
+    'Гості скажуть <em>краще</em> за нас': 'Our guests <em>say it</em> best',
+    'рейтинг на Booking.com</span></p>': 'rating on Booking.com</span></p>',
+    'Попередній відгук': 'Previous review',
+    'Наступний відгук': 'Next review',
+    'Відгуки — гортайте вбік': 'Reviews — scroll sideways',
+    'Усі відгуки в Google': 'All reviews on Google',
+    '#reviews">Відгуки<': '#reviews">Reviews<',
+    'Оцінка 5 з 5': 'Rated 5 out of 5',
+    'Оцінка 4 з 5': 'Rated 4 out of 5',
+    "Не вперше, і знову задоволені. Чудовий вид із вікон номера, тиша й сімейна атмосфера. Відпочивали і взимку, і восени — у номерах завжди тепло. Сніданки ситні, а млинці з вишнями та маком — то любов. Обов'язково завітаємо ще!": "Not our first stay, and happy once again. Great views from the room, peace and quiet, a real family feel. We've stayed in winter and in autumn — the rooms are always warm. Hearty breakfasts, and the cherry and poppy-seed pancakes are pure love. We'll definitely be back!",
+    '<small>Google · з друзями</small>': '<small>Google · with friends</small>',
+    "Дуже затишне місце. Гарний, але ненав'язливий сервіс, смачна домашня кухня, і можна поспілкуватися з шеф-кухарем особисто. Чан, сауна, джакузі — усе прямо при готелі. У цього місця є душа.": 'A really cosy place. Attentive but unobtrusive service, delicious home cooking, and you can chat with the chef in person. Hot tub, sauna, jacuzzi — all right at the hotel. This place has a soul.',
+    'Нас без проблем заселили раніше й завжди йшли назустріч. Було відчуття справжньої турботи про гостей. Сніданки — окрема любов! Атмосфера чудова, а ставлення до гостей і домашніх улюбленців просто прекрасне.': 'They checked us in early without any fuss and always met us halfway. You could feel they genuinely care about their guests. The breakfasts deserve a love letter of their own! A wonderful atmosphere, and lovely to guests and pets alike.',
+    '<strong>Оксана С.</strong>': '<strong>Oksana S.</strong>',
+    '"true">О</span>': '"true">O</span>',
+    "<small>Google · із сім'єю</small>": '<small>Google · with family</small>',
+    'Ресторан із панорамним видом на гори, дуже затишно. Персонал привітний і турботливий — відчула себе як удома. А кухня — клас: борщ найкращий у всьому Буковелі!': 'A restaurant with a panoramic mountain view — so cosy. Warm, caring staff; I felt right at home. And the food is superb: the best borscht in all of Bukovel!',
+    '<small>Google · ресторан</small>': '<small>Google · restaurant</small>',
+    "Через три дні відпочинку знали весь персонал на ім'я — і в результаті найвищий бал! Особливо сподобалося, що в номері був камін і нам дозволили його розпалювати: це +100 до затишку.": 'Three days in, we knew every member of staff by name — top marks! We especially loved having a fireplace in our room that we were allowed to light: +100 to cosiness.',
+    'Дуже привітний персонал. У номерах чисто, прибирання щодня, є все необхідне. Комфортні матраци й тепла ковдра. Є зал для практик і кіно на проєкторі. Дуже класне джакузі та гаряча лазня.': "Very friendly staff. The rooms are spotless, cleaned daily, with everything you need. Comfy mattresses and warm duvets. There's a practice hall and movies on a projector. A great jacuzzi and a hot bathhouse.",
+    'Чудовий готель для тихого сімейного відпочинку. Доброзичливі люди й сервіс на високому рівні: якщо треба перенести заселення чи виселення — завжди йдуть назустріч. Тихий мальовничий куточок, а до центру Буковеля — невеличка прогулянка пішки.': 'A wonderful hotel for a quiet family break. Kind people and top-notch service: if you need to move check-in or check-out, they always accommodate. A peaceful, picturesque spot — and the centre of Bukovel is just a short walk away.',
+    '<strong>Юлія Д.</strong>': '<strong>Yuliia D.</strong>',
+    '"true">Ю</span>': '"true">Y</span>',
+    "Приємна атмосфера, доброзичливий персонал і власники. Відпочили на повну завдяки джакузі, спа й чану. Їжа смачна — обов'язково спробуйте узвар, він повертає в дитинство. Обов'язково приїду ще!": "A lovely atmosphere, and friendly staff and owners. We fully recharged thanks to the jacuzzi, spa and hot tub. Tasty food — be sure to try the uzvar, it takes you straight back to childhood. I'll definitely come again!",
+    '<strong>Руслан П.</strong>': '<strong>Ruslan P.</strong>',
+    '"true">Р</span>': '"true">R</span>',
+    '<small>Google · у парі</small>': '<small>Google · as a couple</small>',
+    '10 днів відпочивала в цьому готелі. Дуже класне розташування: поруч магазини й кафе, швидко дістатися до популярних місць Буковеля. З номера — чудовий краєвид. Персонал уважний, завжди допоможуть.': "I stayed here for 10 days. A great location: shops and cafés nearby, and Bukovel's popular spots are close. A beautiful view from my room. Attentive staff who are always happy to help.",
+    'Дуже затишно й атмосферно. Особливо сподобалося джакузі. У номері чисто, дуже зручне ліжко й красивий вид на одиноку смереку на горі. Персонал приємний, кухня смачна. Однозначно 10/10 :)': 'So cosy and atmospheric. We especially loved the jacuzzi. The room was clean, the bed very comfortable, with a lovely view of a lone spruce on the hill. Pleasant staff, tasty food. A definite 10/10 :)',
+    '<strong>Богдана</strong>': '<strong>Bohdana</strong>',
+    '"true">Б</span>': '"true">B</span>',
+    'Дуже атмосферний ресторан із цікавою історією та неймовірно смачною домашньою кухнею. Дякуємо дівчатам за турботливе обслуговування!': 'A very atmospheric restaurant with an interesting story and incredibly tasty home cooking. Thanks to the girls for such caring service!',
+    '<strong>Дарья M.</strong>': '<strong>Daria M.</strong>',
+    '"true">Д</span>': '"true">D</span>',
+    # ---------- Правки власника ----------
+    'Вечеря, вогонь каміну і легка жива музика.': 'Dinner, a crackling fire and light live music.',
+    'На жаль, узимку басейн не працює, але працює гаряче джакузі.': "Sadly the pool is closed in winter, but the hot jacuzzi is open.",
 }
 
 html = open(SRC, encoding="utf-8").read()
@@ -222,6 +258,9 @@ for src in sorted(T, key=len, reverse=True):
     html, n = re.subn(pattern, lambda m, d=T[src]: d, html)
     if n == 0:
         print("NOT FOUND:", src[:60])
+
+# Ціни номерів: «від 3 000 ₴ / ніч» → «from 3,000 ₴ / night»
+html = re.sub(r"від (\d+) (\d{3}) ₴ / ніч", r"from \1,\2 ₴ / night", html)
 
 # 3. Шляхи: сторінка лежить у папці en/
 html = html.replace('<html lang="uk">', '<html lang="en">')
