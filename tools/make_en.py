@@ -279,6 +279,7 @@ T = {
     '"true">Ю</span>': '"true">Y</span>',
     '<small>Booking.com · з друзями</small>': '<small>Booking.com · with friends</small>',
     '<small>Booking.com · сам</small>': '<small>Booking.com · solo trip</small>',
+    '389 відгуків у Google': '389 reviews on Google',
 }
 
 html = open(SRC, encoding="utf-8").read()
